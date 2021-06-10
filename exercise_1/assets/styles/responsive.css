@@ -1,0 +1,38 @@
+@media (min-width: 1024px) {}
+
+@media (max-width: 1023px) {
+    .tour__link {
+        margin: 20px 30px;
+    }
+    .tour__price-box {
+        height: 60px;
+        border-radius: 0;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        left: -5px;
+        top: 10px
+    }
+    .tour__price-box:after {
+        content: "";
+        position: absolute;
+        border-top: solid 5px #334;
+        border-left: solid 5px transparent;
+        top: 100%;
+        left: 0;
+        filter: brightness(70%);
+    }
+    .tour__status-tag {
+        left: calc(100% - 40px);
+    }
+}
+
+@media (min-width: 740px) and (max-width: 1023px) {}
+
+@media (max-width: 739px) {
+    .place-buy__button {
+        padding: 20px 60px
+    }
+    .tour__link {
+        margin: 20px 20px
+    }
+}
