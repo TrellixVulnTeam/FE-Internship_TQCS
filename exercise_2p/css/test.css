@@ -1,0 +1,46 @@
+.squaredcheck {
+  width: 210px;
+  position: relative;
+  margin: 20px auto; }
+  .squaredcheck label {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    background: #66c0ff;
+    border-radius: 4px; }
+    .squaredcheck label:after {
+      content: '';
+      width: 10px;
+      height: 5px;
+      position: absolute;
+      top: 4px;
+      left: 3px;
+      border: 2px solid #fff;
+      border-top: none;
+      border-right: none;
+      background: transparent;
+      opacity: 0;
+      transform: rotate(-45deg); }
+    .squaredcheck label:hover::after {
+      opacity: 0.3; }
+  .squaredcheck span {
+    position: absolute;
+    width: 300px;
+    left: 30px; }
+  .squaredcheck input[type=checkbox] {
+    visibility: hidden; }
+    .squaredcheck input[type=checkbox]:checked + label {
+      background: #0096FF; }
+    .squaredcheck input[type=checkbox]:checked + label:after {
+      opacity: 1; }
+    .squaredcheck input[type=checkbox].checkbox2 + label {
+      background: #67cead; }
+    .squaredcheck input[type=checkbox].checkbox2:checked + label {
+      background: #329d7b; }
+    .squaredcheck input[type=checkbox].checkbox3 + label {
+      background: #eeccff; }
+    .squaredcheck input[type=checkbox].checkbox3:checked + label {
+      background: #CC66FF; }

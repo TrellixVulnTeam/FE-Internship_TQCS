@@ -1,0 +1,451 @@
+@import 'variables';
+@import 'root';
+@use "scss/shop_main_page";
+
+// overwrite header
+header {
+    .slider {
+        background-color: #343748;
+        &-content {
+            height: 100%;
+            padding-top: 70px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #ffffff;
+            &-symbol {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background-color: $color-gold;
+                color: #393d50;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                i {
+                    font-size: 4.6rem;
+                }
+            }
+            &-title {
+                text-transform: uppercase;
+                margin-bottom: 40px;
+                margin-top: 40px;
+                font-size: 5rem;
+                span:first-child {
+                    @include montserrat-bold;
+                }
+                span:last-child {
+                    @include montserrat-light;
+                }
+            }
+            &-sub-title {
+                font-size: 2.4rem;
+                @include sourceSansPro-light;
+            }
+        }
+        .sub-navigation {
+            left: calc(50% - 190px);
+            a {
+                color: #00bcd4 !important;
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+            .mark-level {
+                color: #ffffff !important;
+                &::after {
+                    background-color: #ff5252;
+                }
+            }
+            i {
+                color: #ffffff;
+            }
+        }
+    }
+}
+
+.container {
+    width: 100vw;
+    line-height: 2.5rem;
+    .main {
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        margin: 0 auto;
+        padding-top: 110px;
+        margin-bottom: 100px;
+        // font-size: 1.6rem;
+        // @include sourceSansPro-regular;
+        &-content {
+            width: 100%;
+            margin-right: 40px;
+            .product {
+                &-briefing {
+                    &-left {
+                        width: 50%;
+                        .gallery-slider {
+                            &-img {
+                                position: relative;
+                                > * {
+                                    width: 40px;
+                                    height: 40px;
+                                    background-color: #b6c6c9;
+                                    text-align: center;
+                                    line-height: 4rem;
+                                    position: absolute;
+                                    top: calc(50% - 20px);
+                                    &:hover {
+                                        background-color: #00bcd4;
+                                        color: #ffffff;
+                                        cursor: pointer;
+                                    }
+                                }
+                                &-prev-btn {
+                                    left: 0;
+                                }
+                                &-next-btn {
+                                    right: 0;
+                                }
+                            }
+                        }
+                    }
+                    &-right {
+                        width: 50%;
+
+                        .price-des {
+                            .decription {
+                                margin-bottom: 20px;
+                            }
+                            .sub-decription {
+                                line-height: 3.6rem;
+                                @include sourceSansPro-regular;
+                                font-size: 1.6rem;
+                                color: #5f727f;
+                                i {
+                                    margin-right: 8px;
+                                    color: red;
+                                    font-size: 1rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .product-tabs {
+                .product-tab {
+                    .product-more-info {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+    .new-in-stock {
+        width: 100%;
+        &.s1 {
+            background-color: #f0f3f2;
+            color: #393d50;
+        }
+        &.s2 {
+            background-color: #525466;
+            color: #ffffff;
+        }
+        & > .grid {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .new-in-stock-content {
+                padding: 70px 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                &-title {
+                    @include montserrat-ultra-light;
+                    font-size: 5rem;
+                    line-height: 7rem;
+                    margin-bottom: 20px;
+                    text-transform: uppercase;
+                    span {
+                        color: #ffc107;
+                        font-weight: bold;
+                    }
+                }
+                &-detail {
+                    @include sourceSansPro-light;
+                    font-size: 1.9rem;
+                    line-height: 3.7rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .bg-product-info {
+        &.style1 {
+            padding: 30px 0 100px 0;
+            background-color: #f0f3f2;
+            & > .grid {
+                .bg-product-info-content {
+                    background-image: url('/img/bg-shoes2.png');
+                    background-position: left;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    &-item {
+                        width: 50%;
+                        display: flex;
+                        &:not(:last-child) {
+                            margin-bottom: 55px;
+                        }
+                        .icon {
+                            flex: 1;
+                            margin-right: 40px;
+                            display: flex;
+                            align-items: flex-start;
+                            .line {
+                                flex: 1;
+                                height: 1px;
+                                background-color: #ccd5da;
+                                margin: 25px 0;
+                            }
+                            &-bg {
+                                width: 50px;
+                                height: 50px;
+                                line-height: 50px;
+                                text-align: center;
+                                font-size: 2rem;
+                                border: {
+                                    radius: 50%;
+                                    width: 1px;
+                                    style: solid;
+                                    color: #ccd5da;
+                                }
+                                i {
+                                    color: #ffc107;
+                                }
+                            }
+                        }
+                        .text {
+                            width: 280px;
+                            .title {
+                                width: 100%;
+                                color: #3c3950;
+                                font-size: 2.4rem;
+                                text-transform: uppercase;
+                                margin-bottom: 32px;
+                                span:first-child {
+                                    @include montserrat-bold;
+                                }
+                                span:last-child {
+                                    @include montserrat-light;
+                                }
+                            }
+                            .detail {
+                                width: 100%;
+                                @include sourceSansPro-regular;
+                                color: #5f727f;
+                                font-size: 1.6rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.style2 {
+            padding: 100px 0;
+            background-color: #25293c;
+            & > .grid {
+                .bg-product-info-content {
+                    background-image: url('/img/bg-shoes1.png');
+                    background-position: right;
+                    color: #ffffff;
+                    .title {
+                        width: 50%;
+                        @include montserrat-light;
+                        font-size: 5rem;
+                        line-height: 5rem;
+                        text-transform: uppercase;
+                        margin-bottom: 60px;
+                    }
+                    .suggest-size {
+                        width: 50%;
+                        font-size: 1.6rem;
+                        @include sourceSansPro-regular;
+                        color: #99a9b5;
+                        .icon {
+                            width: 50px;
+                            height: 56px;
+                            background-color: #656094;
+                            margin: 0 14px 14px 0;
+                            float: left;
+                            clear: both;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            clip-path: polygon(
+                                50% 0%,
+                                100% 23%,
+                                100% 77%,
+                                50% 100%,
+                                0 77%,
+                                0 23%
+                            );
+                            i {
+                                font-size: 2rem;
+                                color: #ffffff;
+                            }
+                        }
+                        .size-table {
+                            margin-top: 60px;
+                            border-collapse: collapse;
+                            width: 100%;
+                            text-align: center;
+                            border: 1px solid #666e80;
+                            tr {
+                                height: 60px;
+                                th {
+                                    @include montserrat-bold;
+                                    font-size: 1.6rem;
+                                    color: #ffce3b;
+                                    text-transform: uppercase;
+                                    &:not(:first-child) {
+                                        width: 15%;
+                                    }
+                                }
+                                td {
+                                    @include sourceSansPro-regular;
+                                    font-size: 1.6rem;
+                                    color: #99a9b5;
+                                    border: 1px solid #666e80;
+                                    &:not(:first-child) {
+                                        width: 15%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-content {
+            min-height: 540px;
+            background: {
+                size: contain;
+                repeat: no-repeat;
+            }
+        }
+    }
+    .product-benefits {
+        &-top, &-bottom {
+            width: 100%;
+            display: flex;
+            > *{
+                width: calc(100% / 3);
+                height: 60px;
+                box-sizing: border-box;
+                border-left: 1px dashed #48455b;
+            }
+        }
+        .box{
+            display: flex;
+            .product-benefit{
+                width: calc((100% - 144px) / 3);
+                margin: 100px 0;
+                box-sizing: border-box;
+                display: flex;
+                &:not(:last-child){
+                    margin-right: 72px;
+                }
+                .content{
+                    flex: 1;
+                    .title{
+                        @include montserrat-light;
+                        font-size: 1.6rem;
+                        color: #48455b;
+                        text-transform: uppercase;
+                        line-height: 3rem;
+                        span{
+                            font-weight: bold;
+                        }
+                    }
+                    .text{
+                        margin-top: 50px;
+                        @include sourceSansPro-regular;
+                        font-size: 1.6rem;
+                        color: #5f727f;
+                        line-height: 2.5rem;
+                    }
+                    .btn{
+                        margin-top: 60px;
+                        width: fit-content;
+                        box-sizing: border-box;
+                        height: 30px;
+                        line-height: 30px;
+                        padding: 0 20px;
+                        border: 2px solid #00bcd4;
+                        border-radius: 2px;
+                        @include montserrat-bold;
+                        font-size: 1.4rem;
+                        color: #00bcd4;
+                        text-transform: uppercase;
+                    }
+                }
+                .icon{
+
+                    i{
+                        margin-left: 70px;
+                        font-size: 3.2rem;
+                        color: #48455b;
+                    }
+                }
+            }
+        }
+    }
+    .product-text{
+        margin: 80px auto;
+        &-content{
+            width: 100%;
+            min-height: 450px;
+            @include sourceSansPro-regular;
+            font-size: 1.6rem;
+            color: #5f727f;
+            line-height: 2.5rem;
+            column-count: 2;
+            column-gap: 40px;
+            column-fill: auto;
+            .special{
+                margin: 32px 0;
+                width: 100%;
+                box-sizing: border-box;
+                font-weight: 300;
+                font-size: 2.4rem;
+                color: #bcc6cd;
+                padding: 50px 38px;
+                line-height: 3.7rem;
+                background-color: #333144
+            }
+        }
+    }
+    .product-imgs{
+        clear: both;
+        margin-bottom: 988px;
+        & > *{
+            float: left;
+            background-color: #dfe7e8;
+        }
+        &-1{
+            width:calc(50% - 40px);
+            height: 888px;
+            margin-right: 40px;
+        }
+        &-2{
+            width: 50%;
+            height: 424px;
+            margin-bottom: 40px;
+        }
+        &-3{
+            width: 50%;
+            height: 424px
+        }
+    }
+}
