@@ -22,8 +22,6 @@ header {
         border-bottom: 1px solid $border-color;
         @include sourceSansPro2(600, 1.4rem);
         .header-contacts {
-            max-width: 1200px;
-            margin: 0 auto;
             padding: 0 15px;
             height: 50px;
             display: flex;
@@ -87,14 +85,9 @@ header {
     .header-bottom {
         width: 100vw;
         background-color: #ffffff;
-        font: {
-            family: 'Montserrat', sans-serif;
-            weight: 700;
-            size: 14px;
-        }
+        @include montserrat2(bold, 1.4rem);
+        text-align: left;
         .header-navbar {
-            max-width: 1200px;
-            margin: 0 auto;
             padding: 0 15px;
             height: 100px;
             display: flex;
@@ -397,7 +390,7 @@ header {
                             color: #00bcd4;
                         }
                     }
-                    &.sub{
+                    &.sub {
                         .language {
                             img {
                                 height: 15px;
@@ -405,7 +398,7 @@ header {
                         }
                         .cart {
                             display: flex;
-    
+
                             div {
                                 width: 32px;
                                 height: 17px;
@@ -440,41 +433,33 @@ header {
         }
     }
     .slider {
-        height: 400px;
+        min-height: 400px;
         width: 100vw;
         overflow: hidden;
         position: relative;
         .slides {
-            height: 400px;
+            height: 100%;
             width: 300vw;
             display: flex;
             position: absolute;
             transition: all 1s;
             .slide {
                 border: none;
-                height: 400px;
+                height: 100%;
                 width: 100vw;
                 background-repeat: no-repeat;
                 background-size: cover;
                 .slide-title {
-                    max-width: 1200px;
-                    width: 100%;
-                    margin: 0 auto;
-                    padding-top: 80px;
+                    padding: 80px 0;
                     z-index: 2;
                     text-align: right;
                     .discount {
-                        margin-bottom: 60px;
-                        font: {
-                            family: 'Source Sans Pro', sans-serif;
-                            size: 100px;
-                        }
-                        color: #ffffff;
+                        line-height: 11rem;
                         span:first-child {
-                            font-weight: 700;
+                            @include sourceSansPro3(700, 10rem, #ffffff);
                         }
                         span:last-child {
-                            font-weight: 200;
+                            @include sourceSansPro3(200, 10rem, #ffffff);
                         }
                     }
                     .text {
@@ -491,17 +476,34 @@ header {
                 }
             }
         }
-        .slider-content-title{
-            line-height: 4rem;
+        &-content {
+            display: flex;
+            justify-content: space-between;
+            color: #3c3950;
+            &-title {
+                text-transform: uppercase;
+                font-size: 5rem;
+                line-height: 5.4rem;
+                span:first-child {
+                    @include montserrat-bold;
+                }
+                span:last-child {
+                    @include montserrat-light;
+                }
+            }
+            &-sub-title {
+                line-height: 3rem;
+            }
+            &-img {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 40px;
+            }
         }
-        .slider-content-sub-title{
-            line-height: 3rem;
-        }
-
         .sub-navigation {
             position: absolute;
             bottom: 20px;
-            left: 20px;
+            left: calc(50% - 580px);
             display: flex;
             color: #ffffff;
             @include sourceSansPro2(400, 1.6rem);
@@ -551,17 +553,13 @@ header {
                 cursor: pointer;
             }
         }
-        .prev-btn{
+        .prev-btn {
             left: 0;
         }
-        .next-btn{
-            right: 0
+        .next-btn {
+            right: 0;
         }
     }
-}
-
-// Extra small devices (portrait phones, less than 576px)
-@media (max-width: 575.98px) {
 }
 
 @media (max-width: 991.98px) {
@@ -612,6 +610,7 @@ header {
 
         .slider {
             height: 360px;
+            overflow-x: scroll;
             .slides {
                 height: 100%;
                 display: flex;
@@ -647,8 +646,11 @@ header {
     }
 }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) and (max-width: 767.98px) {
+@media (max-width: 767.98px) {
+    .slider-content {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
 }
 
 // Medium devices (tablets, 768px and up)
@@ -658,8 +660,6 @@ header {
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) and (max-width: 1199.98px) {
     header {
-        #on-top {
-        }
         .header-top {
             display: none;
         }
@@ -697,9 +697,12 @@ header {
     }
 }
 
+@media (max-width: 1199.98px) {
+    .sub-navigation {
+        left: 20px !important;
+    }
+}
+
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-          .slide-nav-btn{
-            display: none;
-        }
 }

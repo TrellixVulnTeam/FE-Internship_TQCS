@@ -620,9 +620,10 @@
             .product-briefing-left .socials-sku .sku-categories a {
               color: #00bcd4; }
           .product-briefing-left .socials-sku .sku-tags {
-            display: flex; }
+            display: flex;
+            flex-wrap: wrap; }
             .product-briefing-left .socials-sku .sku-tags .sku-tag {
-              margin-left: 15px;
+              margin: 0 0 12px 15px;
               position: relative;
               padding: 0 16px 0 24px;
               width: fit-content;
@@ -742,6 +743,7 @@
       .product-briefing-right .product-current-price {
         margin-top: 72px;
         display: flex;
+        flex-wrap: wrap;
         align-items: baseline; }
         .product-briefing-right .product-current-price :not(:last-child) {
           margin-right: 20px; }
@@ -760,11 +762,13 @@
       .product-briefing-right .product-cart {
         margin-top: 20px;
         display: flex;
+        flex-wrap: wrap;
         align-items: center; }
         .product-briefing-right .product-cart > * {
           border-radius: 3px;
           height: 40px;
           margin-right: 16px;
+          margin-bottom: 12px;
           padding: 0 18px;
           font-weight: bold; }
           .product-briefing-right .product-cart > * i {
@@ -1228,15 +1232,16 @@ button.scroll-up-btn {
     border-radius: 5px;
     overflow: visible; }
     .steps .step {
+      width: 33% !important;
       height: 62px; }
       .steps .step:not(:first-child) {
-        margin-top: -40px; }
+        margin-top: -24px; }
       .steps .step:nth-of-type(2) {
-        margin-left: 25%; }
+        margin-left: 22%; }
       .steps .step:nth-of-type(3) {
-        margin-left: 50%; }
+        margin-left: 44%; }
       .steps .step:last-child {
-        margin-left: 75%; }
+        margin-left: 66%; }
       .steps .step:hover {
         color: #ffffff;
         background-color: #b6c6c9; }
@@ -1306,8 +1311,6 @@ header {
     font-weight: 600;
     font-size: 1.4rem; }
     header .header-top .header-contacts {
-      max-width: 1200px;
-      margin: 0 auto;
       padding: 0 15px;
       height: 50px;
       display: flex;
@@ -1357,12 +1360,11 @@ header {
   header .header-bottom {
     width: 100vw;
     background-color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 14px; }
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: left; }
     header .header-bottom .header-navbar {
-      max-width: 1200px;
-      margin: 0 auto;
       padding: 0 15px;
       height: 100px;
       display: flex;
@@ -1622,38 +1624,38 @@ header {
                 top: 60%;
                 left: 0; }
   header .slider {
-    height: 400px;
+    min-height: 400px;
     width: 100vw;
     overflow: hidden;
     position: relative; }
     header .slider .slides {
-      height: 400px;
+      height: 100%;
       width: 300vw;
       display: flex;
       position: absolute;
       transition: all 1s; }
       header .slider .slides .slide {
         border: none;
-        height: 400px;
+        height: 100%;
         width: 100vw;
         background-repeat: no-repeat;
         background-size: cover; }
         header .slider .slides .slide .slide-title {
-          max-width: 1200px;
-          width: 100%;
-          margin: 0 auto;
-          padding-top: 80px;
+          padding: 80px 0;
           z-index: 2;
           text-align: right; }
           header .slider .slides .slide .slide-title .discount {
-            margin-bottom: 60px;
-            font-family: 'Source Sans Pro', sans-serif;
-            font-size: 100px;
-            color: #ffffff; }
+            line-height: 11rem; }
             header .slider .slides .slide .slide-title .discount span:first-child {
-              font-weight: 700; }
+              color: #ffffff;
+              font-family: "Source Sans Pro", sans-serif;
+              font-weight: 700;
+              font-size: 10rem; }
             header .slider .slides .slide .slide-title .discount span:last-child {
-              font-weight: 200; }
+              color: #ffffff;
+              font-family: "Source Sans Pro", sans-serif;
+              font-weight: 200;
+              font-size: 10rem; }
           header .slider .slides .slide .slide-title .text {
             text-align: right;
             color: #ffffff;
@@ -1669,14 +1671,30 @@ header {
             font-weight: 300;
             font-size: 2.4rem;
             line-height: 3rem; }
-    header .slider .slider-content-title {
-      line-height: 4rem; }
-    header .slider .slider-content-sub-title {
-      line-height: 3rem; }
+    header .slider-content {
+      display: flex;
+      justify-content: space-between;
+      color: #3c3950; }
+      header .slider-content-title {
+        text-transform: uppercase;
+        font-size: 5rem;
+        line-height: 5.4rem; }
+        header .slider-content-title span:first-child {
+          font-family: "Montserrat", sans-serif;
+          font-weight: bold; }
+        header .slider-content-title span:last-child {
+          font-family: "Montserrat", sans-serif;
+          font-weight: 300; }
+      header .slider-content-sub-title {
+        line-height: 3rem; }
+      header .slider-content-img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 40px; }
     header .slider .sub-navigation {
       position: absolute;
       bottom: 20px;
-      left: 20px;
+      left: calc(50% - 580px);
       display: flex;
       color: #ffffff;
       font-family: "Source Sans Pro", sans-serif;
@@ -1749,7 +1767,8 @@ header {
       header .header-bottom .header-navbar .navigation {
         display: none; }
   header .slider {
-    height: 360px; }
+    height: 360px;
+    overflow-x: scroll; }
     header .slider .slides {
       height: 100%;
       display: flex; }
@@ -1772,6 +1791,11 @@ header {
       position: absolute; }
     header .slider .slide-nav-btn {
       display: none; } }
+
+@media (max-width: 767.98px) {
+  .slider-content {
+    flex-direction: column-reverse;
+    align-items: center; } }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
   header .header-top {
@@ -1802,6 +1826,6 @@ header {
         height: 90px;
         padding: 0; } }
 
-@media (min-width: 1200px) {
-  .slide-nav-btn {
-    display: none; } }
+@media (max-width: 1199.98px) {
+  .sub-navigation {
+    left: 20px !important; } }

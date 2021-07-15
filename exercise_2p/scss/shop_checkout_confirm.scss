@@ -4,22 +4,14 @@
 // overwrite header
 header {
     .slider {
-        height: 200px;
+        min-height: 200px;
         background-color: #e9f0ef;
         .grid {
             margin: 40px auto 0 auto;
-            background: {
-                image: url('/img/check-logo.svg');
-                position: right;
-                repeat: no-repeat;
-                size: contain;
-            }
             .slider-content {
                 display: flex;
                 color: #3c3950;
-                height: 120px;
                 padding: 0 20px;
-                // margin-top: -30px;
                 &-title {
                     text-transform: uppercase;
                     font-size: 5rem;

@@ -26,8 +26,8 @@
         <!-- start header -->
         <header>
             <div id="on-top"></div>
-            <div class="header-top">
-                <nav class="header-contacts">
+            <div class="header-top ">
+                <nav class="header-contacts grid">
                     <div class="header-contacts-number"><i class="fas fa-headphones"></i>+1916-85-2235</div>
                     <ul class="header-contacts-socials">
                         <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -48,8 +48,8 @@
                     <a href="#" class="header-contact-wishlist">My Wishlist</a>
                 </nav>
             </div>
-            <div class="header-bottom sticky">
-                <nav class="header-navbar">
+            <div class="header-bottom sticky ">
+                <nav class="header-navbar grid">
                     <input type="checkbox" name="cartMobileCheckbox" id="cartMobileCheckbox" class="hidden">
                     <label for="cartMobileCheckbox" class="cart-mobile-btn hidden">
                         <i class="fas fa-shopping-cart"></i>
@@ -169,42 +169,51 @@
             <div class="slider">
                 <div class="slides">
                     <div class="slide" id="slide1" style="background-image: url('/img/img2.jpg');">
-                        <div class="slide-title">
-                            <div class="discount">
-                                <span>50%</span>
-                                <span>OFF</span>
+                        <div class="grid">
+                            <div class="slide-title">
+                                <div class="discount">
+                                    <span>50%</span>
+                                    <span>OFF</span>
+                                </div>
+                                <div class="text">
+                                    <span>Annual Seasonal Discounts On All Kinds Of Jewelry In selected
+                                        Categories.</span>
+                                    <span><br>Limited Time Only Prposition! Look For The "Sales" Label Over Desired
+                                        Items.</span>
+                                </div>
+                                <div class="short-text hidden"> shopping now </div>
                             </div>
-                            <div class="text">
-                                <span>Annual Seasonal Discounts On All Kinds Of Jewelry In selected Categories.</span>
-                                <span><br>Limited Time Only Prposition! Look For The "Sales" Label Over Desired
-                                    Items.</span>
-                            </div>
-                            <div class="short-text hidden"> shopping now </div>
                         </div>
                     </div>
                     <div class="slide" id="slide2" style="background-image: url('/img/img3.jpg');">
-                        <div class="slide-title">
-                            <div class="discount">
-                                <span>75%</span>
-                                <span>OFF</span>
-                            </div>
-                            <div class="text">
-                                <span>Annual Seasonal Discounts On All Kinds Of Jewelry In selected Categories.</span>
-                                <span><br>Limited Time Only Prposition! Look For The "Sales" Label Over Desired
-                                    Items.</span>
+                        <div class="grid">
+                            <div class="slide-title">
+                                <div class="discount">
+                                    <span>75%</span>
+                                    <span>OFF</span>
+                                </div>
+                                <div class="text">
+                                    <span>Annual Seasonal Discounts On All Kinds Of Jewelry In selected
+                                        Categories.</span>
+                                    <span><br>Limited Time Only Prposition! Look For The "Sales" Label Over Desired
+                                        Items.</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="slide" id="slide3" style="background-image: url('/img/img1.jpg');">
-                        <div class="slide-title">
-                            <div class="discount">
-                                <span>99%</span>
-                                <span>OFF</span>
-                            </div>
-                            <div class="text">
-                                <span>Annual Seasonal Discounts On All Kinds Of Jewelry In selected Categories.</span>
-                                <span><br>Limited Time Only Prposition! Look For The "Sales" Label Over Desired
-                                    Items.</span>
+                        <div class="grid">
+                            <div class="slide-title">
+                                <div class="discount">
+                                    <span>99%</span>
+                                    <span>OFF</span>
+                                </div>
+                                <div class="text">
+                                    <span>Annual Seasonal Discounts On All Kinds Of Jewelry In selected
+                                        Categories.</span>
+                                    <span><br>Limited Time Only Prposition! Look For The "Sales" Label Over Desired
+                                        Items.</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -615,8 +624,10 @@
                             </div>
                         </div>
                         <div class="btns">
-                            <div class="classify-pre-page-btn" onclick="prePage()"><i class="fas fa-chevron-left"></i></div>
-                            <div class="classify-next-page-btn" onclick="nextPage()"><i class="fas fa-chevron-right"></i>
+                            <div class="classify-pre-page-btn" onclick="prePage()"><i class="fas fa-chevron-left"></i>
+                            </div>
+                            <div class="classify-next-page-btn" onclick="nextPage()"><i
+                                    class="fas fa-chevron-right"></i>
                             </div>
                         </div>
                     </div>
@@ -1496,8 +1507,9 @@
             </div>
         </footer>
         <!-- end footer -->
-        <button class="scroll-up-btn" onclick="document.getElementById('on-top').scrollIntoView({behavior: 'smooth'})"
-           ><i class="fas fa-chevron-up"></i></button>
+        <button class="scroll-up-btn"
+            onclick="document.getElementById('on-top').scrollIntoView({behavior: 'smooth'})"><i
+                class="fas fa-chevron-up"></i></button>
     </div>
     <script src="/js/common.js"></script>
     <script src="/js/shop_main_page.js"></script>

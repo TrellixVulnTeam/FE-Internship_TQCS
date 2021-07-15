@@ -237,7 +237,8 @@ header {
                         width: calc((100% - 80px) / 3);
                         box-sizing: border-box;
                         padding: 24px;
-                        height: 125px;
+                        min-height: 125px;
+                        height: auto;
                         @include montserrat-light;
                         font-size: 1.6rem;
                         color: #5f727f;
@@ -643,13 +644,90 @@ footer {
         }
     }
 }
-
+@media (max-width: 575.98px){
+    .buy-now {
+        display: none !important;
+    }
+}
 @media (max-width: 767.98px) {
     .more {
         &-content {
             //  @overwrite
             .product-tabs {
                 padding-left: 0 !important;
+            }
+        }
+    }
+    
+    .product-suggest {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .logo-here {
+            margin-bottom: 40px;
+        }
+        &-size {
+            width:  100% !important;
+            .size-table {
+                margin-top: 38px;
+                border-collapse: collapse;
+                width: 100%;
+                text-align: center;
+                tr {
+                    height: 60px;
+                    th {
+                        background-color: #dfe5e8;
+                        @include montserrat-bold;
+                        font-size: 1.6rem;
+                        color: #3c3950;
+                        text-transform: uppercase;
+                        &:not(:first-child) {
+                            width: 15%;
+                        }
+                    }
+                    td {
+                        @include sourceSansPro-regular;
+                        font-size: 1.6rem;
+                        color: #5f727f;
+                        border: 1px solid #dfe5e8;
+                        &:not(:first-child) {
+                            width: 15%;
+                        }
+                    }
+                }
+            }
+        }
+        .product-benefits {
+            margin-top: 36px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .product-benefit {
+                width: calc((100% - 80px) / 3);
+                box-sizing: border-box;
+                padding: 24px;
+                height: 125px;
+                @include montserrat-light;
+                font-size: 1.6rem;
+                color: #5f727f;
+                text-transform: uppercase;
+                border: {
+                    top-right-radius: 30px;
+                    bottom-left-radius: 30px;
+                    bottom-right-radius: 30px;
+                    color: $border-color-grey;
+                    style: solid;
+                    width: 1px;
+                }
+                i {
+                    width: 100%;
+                    color: #3c3950;
+                }
+                span {
+                    font-weight: bold;
+                    color: #3c3950;
+                }
             }
         }
     }
