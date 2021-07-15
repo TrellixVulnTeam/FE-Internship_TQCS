@@ -25,7 +25,8 @@
     <div class="app">
         <!-- start header -->
         <header>
-            <div class="header-top" id="on-top">
+            <div id="on-top"></div>
+            <div class="header-top">
                 <nav class="header-contacts">
                     <div class="header-contacts-number"><i class="fas fa-headphones"></i>+1916-85-2235</div>
                     <ul class="header-contacts-socials">
@@ -47,10 +48,76 @@
                     <a href="#" class="header-contact-wishlist">My Wishlist</a>
                 </nav>
             </div>
-            <div class="header-bottom">
+            <div class="header-bottom sticky">
                 <nav class="header-navbar">
+                    <input type="checkbox" name="cartMobileCheckbox" id="cartMobileCheckbox" class="hidden">
+                    <label for="cartMobileCheckbox" class="cart-mobile-btn hidden">
+                        <i class="fas fa-shopping-cart"></i>
+                    </label>
+                    <label for="cartMobileCheckbox" class="cart-mobile-overlay"></label>
+                    <!-- cart list mobile -->
+                    <div class="cart-mobile-menu ">
+                        <label for="cartMobileCheckbox" class="close-btn">
+                            <i class="fas fa-times"></i>
+                        </label>
+                        <div class="title"><i class="fas fa-shopping-cart"></i>CART</div>
+                        <ul class="cart-list">
+                            <li class="cart-item">
+                                <div class="cart-item-delete-btn noselect" onclick="closeParentBtn(this)"
+                                    title="Click to delete item">X</div>
+                                <a href="#" class="cart-item-link">
+                                    <div class="cart-item-img"></div>
+                                    <div class="cart-item-content">
+                                        <div class="cart-item-content-title percent-tag"> product title here</div>
+                                        <div class="cart-item-content-price">
+                                            <div class="cart-item-amount">1x</div>
+                                            <div class="cart-item-price">$35.00</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="cart-item">
+                                <div class="cart-item-delete-btn noselect" onclick="closeParentBtn(this)"
+                                    title="Click to delete item">X</div>
+                                <a href="#" class="cart-item-link">
+                                    <div class="cart-item-img"></div>
+                                    <div class="cart-item-content">
+                                        <div class="cart-item-content-title percent-tag"> product title here</div>
+                                        <div class="cart-item-content-price">
+                                            <div class="cart-item-amount">1x</div>
+                                            <div class="cart-item-price">$35.00</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="cart-item">
+                                <div class="cart-item-delete-btn noselect" onclick="closeParentBtn(this)"
+                                    title="Click to delete item">X</div>
+                                <a href="#" class="cart-item-link">
+                                    <div class="cart-item-img"></div>
+                                    <div class="cart-item-content">
+                                        <div class="cart-item-content-title percent-tag"> product title here</div>
+                                        <div class="cart-item-content-price">
+                                            <div class="cart-item-amount">1x</div>
+                                            <div class="cart-item-price">$35.00</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="place">
+                            <div class="place-subtotal">
+                                <span>Subtotal</span>
+                                <span>$2589.99</span>
+                            </div>
+                            <div class="place-btn">
+                                <button class="place-btn__view-cart">view cart</button>
+                                <button class="place-btn__checkout">checkout</button>
+                            </div>
+                        </div>
+                    </div>
                     <a href="#" class="header-logo"><img src="/img/logo.webp" alt="logo"></a>
-                    <ul class="main-navigation">
+                    <ul class="navigation">
                         <li><a href="#">HOME</a></li>
                         <li><a href="#">PAGES</a></li>
                         <li><a href="#">BLOG</a></li>
@@ -58,15 +125,45 @@
                         <li><a href="#" class="item-focus">SHOP</a></li>
                         <li><a href="#">FEATURES</a></li>
                         <li><a href="#">ELEMENTS</a></li>
-                    </ul>
-                    <ul class="sub-navigation">
-                        <li><a href="#" class="language"><img src="/img/flag.png" alt=""></a></li>
-                        <li><a href="#"><i class="fas fa-search"></i></a></li>
-                        <li><a href="#" class="cart">
+                        <li class="sub">
+                            <a href="#" class="language"><img src="/img/flag.png" alt=""></a>
+                            <a href="#"><i class="fas fa-search"></i></a>
+                            <a href="#" class="cart">
                                 <i class="fas fa-shopping-cart"></i>
                                 <div>2</div>
-                            </a></li>
+                            </a>
+                        </li>
                     </ul>
+                    <input type="checkbox" name="menuMobile" id="menuMobile" hidden>
+                    <label for="menuMobile" class="primary-menu-mobile-btn hidden"><i class="fas fa-bars"></i></label>
+                    <label for="menuMobile" class="primary-menu-mobile-overlay"></label>
+                    <div class="primary-menu-mobile">
+                        <div class="nav">
+                            <div class="title"> MENU </div>
+                            <label for="menuMobile" class="close-btn">
+                                <i class="fas fa-times"></i>
+                            </label>
+                            <a href="#" class="item"> HOME </a>
+                            <a href="#" class="item"> PAGES </a>
+                            <a href="#" class="item"> BLOGS </a>
+                            <a href="#" class="item"> PORTFOLIUS </a>
+                            <a href="#" class="item"> SHOP </a>
+                            <a href="#" class="item"> FEATURE </a>
+                            <a href="#" class="item"> ELEMENT </a>
+                        </div>
+                        <div class="contact">
+                            <div class="contact-btn noselect" onclick="showNextSiblingElement(this)"> More <i
+                                    class="fas fa-chevron-right"></i>
+                            </div>
+                            <div class="contact-list hidden">
+                                <a href="#"><i class="fas fa-chevron-right"></i> My Account</a>
+                                <a href="#"><i class="fas fa-chevron-right"></i> FAQ</a>
+                                <a href="#"><i class="fas fa-chevron-right"></i> Contact Us</a>
+                                <a href="#"><i class="fas fa-chevron-right"></i> Newsletter Sigup</a>
+                                <a href="#"><i class="fas fa-chevron-right"></i> Shipping Terms</a>
+                            </div>
+                        </div>
+                    </div>
                 </nav>
             </div>
             <div class="slider">
@@ -82,6 +179,7 @@
                                 <span><br>Limited Time Only Prposition! Look For The "Sales" Label Over Desired
                                     Items.</span>
                             </div>
+                            <div class="short-text hidden"> shopping now </div>
                         </div>
                     </div>
                     <div class="slide" id="slide2" style="background-image: url('/img/img3.jpg');">
@@ -116,13 +214,11 @@
                     <i class="fas fa-arrow-right"></i>
                     <a href="#" class="nav-first-level">Shop</a>
                 </div>
-                <button class="right-btn slide-nav-btn" onclick="nextSlide()"><i
-                        class="fas fa-arrow-right"></i></button>
-                <button class="left-btn slide-nav-btn" onclick="preSlide()"><i class="fas fa-arrow-left"></i></button>
+                <button class="prev-btn slide-nav-btn" onclick="preSlide()"><i class="fas fa-arrow-left"></i></button>
+                <button class="next-btn slide-nav-btn" onclick="nextSlide()"><i class="fas fa-arrow-right"></i></button>
             </div>
         </header>
         <!-- end header -->
-        
         <!-- start container -->
         <div class="container">
             <div class="main">
@@ -130,13 +226,13 @@
                     <div class="categories-title"> categories </div>
                     <ul class="categories-list1 noselect">
                         <li class="categories-list1-item">
-                            <div class="sub-list-lv1-selection categories-selection">
-                                version
-                                <i class="fas fa-chevron-right"></i>
-                            </div>  
+                            <div class="sub-list-lv1-selection categories-selection"> version <i
+                                    class="fas fa-chevron-right"></i>
+                            </div>
                             <ul class="sub-list-lv1-menu categories-options">
                                 <li class="sub-list-lv1-item">
-                                    <div class="sub-list-lv2-selection categories-selection">Version 1<i class="fas fa-chevron-right"></i></div>
+                                    <div class="sub-list-lv2-selection categories-selection">Version 1<i
+                                            class="fas fa-chevron-right"></i></div>
                                     <ul class="sub-list-lv2-menu categories-options">
                                         <li class="sub-list-lv2-item categories-no-selection">Version 1.1</li>
                                         <li class="sub-list-lv2-item categories-no-selection">Version 1.2</li>
@@ -148,18 +244,16 @@
                             </ul>
                         </li>
                         <li class="categories-list1-item">
-                            <div class="sub-list-lv1-selection categories-no-selection">
-                               lorem ipsum
-                            </div>  
+                            <div class="sub-list-lv1-selection categories-no-selection"> lorem ipsum </div>
                         </li>
                         <li class="categories-list1-item">
-                            <div class="sub-list-lv1-selection categories-selection">
-                                proin
-                                <i class="fas fa-chevron-right"></i>
-                            </div>  
+                            <div class="sub-list-lv1-selection categories-selection"> proin <i
+                                    class="fas fa-chevron-right"></i>
+                            </div>
                             <ul class="sub-list-lv1-menu categories-options">
                                 <li class="sub-list-lv1-item">
-                                    <div class="sub-list-lv2-selection categories-selection">July 2015 <i class="fas fa-chevron-right"></i></div>
+                                    <div class="sub-list-lv2-selection categories-selection">July 2015 <i
+                                            class="fas fa-chevron-right"></i></div>
                                     <ul class="sub-list-lv2-menu categories-options">
                                         <li class="sub-list-lv2-item categories-no-selection">0-10 July 2015</li>
                                         <li class="sub-list-lv2-item categories-no-selection">11-20July 2015</li>
@@ -172,10 +266,9 @@
                             </ul>
                         </li>
                         <li class="categories-list1-item">
-                            <div class="sub-list-lv1-selection categories-selection">
-                                gravida
-                                <i class="fas fa-chevron-right"></i>
-                            </div>  
+                            <div class="sub-list-lv1-selection categories-selection"> gravida <i
+                                    class="fas fa-chevron-right"></i>
+                            </div>
                             <ul class="sub-list-lv1-menu categories-options">
                                 <li class="sub-list-lv1-item categories-no-selection">Gravida 1</li>
                                 <li class="sub-list-lv1-item categories-no-selection">Gravida 2</li>
@@ -184,27 +277,23 @@
                             </ul>
                         </li>
                         <li class="categories-list1-item">
-                                <div class="sub-list-lv1-selection categories-selection">
-                                    nibh vel velit
-                                    <i class="fas fa-chevron-right"></i>
-                                </div>  
-                                <ul class="sub-list-lv1-menu categories-options">
-                                    <li class="sub-list-lv1-item categories-no-selection">Nibh vel velit 1</li>
-                                    <li class="sub-list-lv1-item categories-no-selection">Nibh vel velit 2</li>
-                                    <li class="sub-list-lv1-item categories-no-selection">Nibh vel velit 3</li>
-                                    <li class="sub-list-lv1-item categories-no-selection">Nibh vel velit 4</li>
-                                </ul>
-                        </li>
-                        <li class="categories-list1-item"> 
-                            <div class="sub-list-lv1-selection categories-no-selection">
-                               Auctor
-                            </div>  
+                            <div class="sub-list-lv1-selection categories-selection"> nibh vel velit <i
+                                    class="fas fa-chevron-right"></i>
+                            </div>
+                            <ul class="sub-list-lv1-menu categories-options">
+                                <li class="sub-list-lv1-item categories-no-selection">Nibh vel velit 1</li>
+                                <li class="sub-list-lv1-item categories-no-selection">Nibh vel velit 2</li>
+                                <li class="sub-list-lv1-item categories-no-selection">Nibh vel velit 3</li>
+                                <li class="sub-list-lv1-item categories-no-selection">Nibh vel velit 4</li>
+                            </ul>
                         </li>
                         <li class="categories-list1-item">
-                            <div class="sub-list-lv1-selection categories-selection">
-                                Aliquet
-                                <i class="fas fa-chevron-right"></i>
-                            </div>  
+                            <div class="sub-list-lv1-selection categories-no-selection"> Auctor </div>
+                        </li>
+                        <li class="categories-list1-item">
+                            <div class="sub-list-lv1-selection categories-selection"> Aliquet <i
+                                    class="fas fa-chevron-right"></i>
+                            </div>
                             <ul class="sub-list-lv1-menu categories-options">
                                 <li class="sub-list-lv1-item categories-no-selection">Aliquet 1</li>
                                 <li class="sub-list-lv1-item categories-no-selection">Aliquet 2</li>
@@ -213,9 +302,7 @@
                             </ul>
                         </li>
                         <li class="categories-list1-item">
-                            <div class="sub-list-lv1-selection categories-no-selection">
-                                aenean
-                            </div>  
+                            <div class="sub-list-lv1-selection categories-no-selection"> aenean </div>
                         </li>
                     </ul>
                     <input type="search" name="search-product" id="search-product"
@@ -527,9 +614,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="classify-next-page-btn" onclick="nextPage()"><i class="fas fa-chevron-right"></i>
+                        <div class="btns">
+                            <div class="classify-pre-page-btn" onclick="prePage()"><i class="fas fa-chevron-left"></i></div>
+                            <div class="classify-next-page-btn" onclick="nextPage()"><i class="fas fa-chevron-right"></i>
+                            </div>
                         </div>
-                        <div class="classify-pre-page-btn" onclick="prePage()"><i class="fas fa-chevron-left"></i></div>
                     </div>
                     <div class="products">
                         <div class="products-nav">
@@ -566,63 +655,7 @@
                             </div>
                         </div>
                         <div class="products-list">
-                            <!-- 15 item -->
-                            <div class="products-list-item">
-                                <a href="#" class="products-list-item-link">
-                                    <div class="products-list-item-img">
-                                        <div class="products-list-item-img-sale-tag">SALE!</div>
-                                        <div class="products-list-item-img-new-tag">NEW</div>
-                                    </div>
-                                    <div class="products-list-item-content">
-                                        <div class="products-list-item-content-stars">
-                                            <i class="fas fa-star icon-gold-color"></i>
-                                            <i class="fas fa-star icon-gold-color"></i>
-                                            <i class="fas fa-star icon-gold-color"></i>
-                                            <i class="fas fa-star icon-gold-color"></i>
-                                            <i class="fas fa-star icon-gold-color"></i>
-                                        </div>
-                                        <div class="products-list-item-content-name">black impression</div>
-                                        <div class="products-list-item-content-price">$35.00-$89.99</div>
-                                        <div class="products-list-item-content-view-cart">
-                                            <i class="fas fa-list-ul"></i> View Cart
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="products-list-item">
-                                <a href="#" class="products-list-item-link">
-                                    <div class="products-list-item-img">
-                                        <div class="products-list-item-img-sale-tag">SALE!</div>
-                                    </div>
-                                    <div class="products-list-item-content">
-                                        <div class="products-list-item-content-line">
-                                        </div>
-                                        <div class="products-list-item-content-name">denim classy shorts</div>
-                                        <div class="products-list-item-content-price">$35.00-$89.99</div>
-                                        <div class="products-list-item-content-view-wish-list">
-                                            <i class="far fa-star"></i> View Wishlist
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="products-list-item">
-                                <a href="#" class="products-list-item-link">
-                                    <div class="products-list-item-img">
-                                        <div class="products-list-item-img-new-tag">NEW</div>
-                                    </div>
-                                    <div class="products-list-item-content">
-                                        <div class="products-list-item-content-line">
-                                        </div>
-                                        <div class="products-list-item-content-name">golden heels</div>
-                                        <div class="products-list-item-content-price">$35.00-$89.99</div>
-                                        <div class="products-list-item-content-style-icon">
-                                            <i class="fas fa-shopping-cart"></i>
-                                            <i class="far fa-list-alt"></i>
-                                            <i class="far fa-heart"></i>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                            <!-- 12 item -->
                             <div class="products-list-item">
                                 <a href="#" class="products-list-item-link">
                                     <div class="products-list-item-img">
@@ -1261,7 +1294,6 @@
             </div>
         </div>
         <!-- end container -->
-
         <!-- start footer -->
         <footer>
             <div class="slogan">
@@ -1309,24 +1341,21 @@
                                 <div class="footer-column-item-content-recent-post">
                                     <div class="recent-post-img"></div>
                                     <div class="recent-post-info">
-                                        <span> Proin gravida nibh vel velit autor alite
-                                            aeneanaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa </span>
+                                        <span> Proin gravida nibh vel velit autor alite aeneanaaa</span>
                                         <span> 27 Dec 2015 </span>
                                     </div>
                                 </div>
                                 <div class="footer-column-item-content-recent-post">
                                     <div class="recent-post-img"></div>
                                     <div class="recent-post-info">
-                                        <span> Proin gravida nibh vel velit autor alite
-                                            aeneanaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa </span>
+                                        <span> Proin gravida nibh vel velit autor alite aeneanaaa </span>
                                         <span> 27 Dec 2015 </span>
                                     </div>
                                 </div>
                                 <div class="footer-column-item-content-recent-post">
                                     <div class="recent-post-img"></div>
                                     <div class="recent-post-info">
-                                        <span> Proin gravida nibh vel velit autor alite
-                                            aeneanaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa </span>
+                                        <span> Proin gravida nibh vel velit autor alite Lorem, ipsum dolor. </span>
                                         <span> 27 Dec 2015 </span>
                                     </div>
                                 </div>
@@ -1467,10 +1496,8 @@
             </div>
         </footer>
         <!-- end footer -->
-        <butotn class="scroll-up-btn" onclick="document.getElementById('on-top').scrollIntoView({behavior: 'smooth'})"
-            style="position: fixed; bottom: 72px; left: calc(100% - 142px); height: 50px; width: 50px; display: flex; 
-        justify-content: center; align-items: center;border-radius: 5px; background-color: #161723;opacity: 0.6; 
-        color: #58606c; font-size: 2.4rem"><i class="fas fa-chevron-up"></i></butotn>
+        <button class="scroll-up-btn" onclick="document.getElementById('on-top').scrollIntoView({behavior: 'smooth'})"
+           ><i class="fas fa-chevron-up"></i></button>
     </div>
     <script src="/js/common.js"></script>
     <script src="/js/shop_main_page.js"></script>

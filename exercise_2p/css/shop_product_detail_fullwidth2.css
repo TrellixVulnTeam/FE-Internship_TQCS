@@ -4,6 +4,63 @@
   to {
     opacity: 1; } }
 
+@keyframes fadeOut {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 2; } }
+
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+@keyframes slideOutToTop {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%); } }
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100%); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes slideOutToLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+  100% {
+    opacity: 0;
+    transform: translateX(100%); } }
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes slideOutToRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+  100% {
+    opacity: 0;
+    transform: translateX(-100%); } }
+
+.hidden {
+  display: none; }
+
 .border-top-grey {
   border-top: 1px solid #dfe5e8; }
 
@@ -477,8 +534,7 @@
     width: 100%;
     display: flex; }
     .product-briefing-left {
-      width: 362px;
-      margin-right: 40px; }
+      width: 362px; }
       .product-briefing-left .gallery-slider {
         width: 100%;
         margin-bottom: 100px; }
@@ -599,6 +655,7 @@
       font-size: 1.6rem;
       color: #3c3950; }
       .product-briefing-right .title {
+        margin-right: 40px;
         font-family: "Montserrat", sans-serif;
         font-weight: bold;
         font-size: 2.8rem;
@@ -621,7 +678,9 @@
         padding-top: 65px;
         border-top: 1px solid #dfe5e8; }
         .product-briefing-right .price-des .price {
-          display: flex; }
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between; }
           .product-briefing-right .price-des .price .old-price,
           .product-briefing-right .price-des .price .new-price {
             display: flex;
@@ -637,12 +696,10 @@
               font-weight: 300; }
           .product-briefing-right .price-des .price .old-price span:last-child {
             text-decoration: line-through; }
-          .product-briefing-right .price-des .price .new-price {
-            margin-left: 44px; }
-            .product-briefing-right .price-des .price .new-price span:first-child {
-              color: #f44336; }
-            .product-briefing-right .price-des .price .new-price span:last-child {
-              font-size: 3.6rem; }
+          .product-briefing-right .price-des .price .new-price span:first-child {
+            color: #f44336; }
+          .product-briefing-right .price-des .price .new-price span:last-child {
+            font-size: 3.6rem; }
         .product-briefing-right .price-des .decription {
           margin-top: 36px;
           color: #5f727f;
@@ -842,6 +899,7 @@
     font-weight: 300;
     color: #3c3950;
     font-size: 3.6rem;
+    line-height: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -855,11 +913,13 @@
       border-bottom: 2px solid #dfe5e8; }
   .related-products-content {
     display: flex;
-    margin-top: 68px; }
+    margin-top: 68px;
+    padding-left: 20px;
+    overflow-x: scroll; }
     .related-products-content .related-products-item {
-      width: calc((100% -200px) / 6); }
-      .related-products-content .related-products-item:not(:last-child) {
-        margin-right: 40px; }
+      min-width: 180px;
+      width: 200px;
+      margin-right: 40px; }
       .related-products-content .related-products-item-img {
         height: 200px;
         background-color: #f0f3f2;
@@ -1086,9 +1146,149 @@
                 .hot-topics-content .hot-topic-content-list-item-link .hot-topic-content-list-item-content-stars i {
                   color: #b6c6c9; }
 
-@use "scss/shop_main_page";
+.onStep {
+  background-color: #ffd453 !important;
+  color: #3c3950 !important; }
+  .onStep:after {
+    background-color: #ffd453 !important; }
+
+.steps {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 62px;
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden; }
+  .steps .step {
+    width: 25%;
+    height: 100%;
+    padding-left: 20px;
+    background-color: #e9f0ef;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-transform: uppercase;
+    color: #99a9b5; }
+    .steps .step:first-child {
+      clip-path: polygon(0 0, calc(100% - 32px) 0, calc(100% - 4px) 50%, calc(100% - 32px) 100%, 0 100%); }
+    .steps .step:not(:first-child):not(:last-child) {
+      clip-path: polygon(-28px 0, calc(100% - 32px) 0, calc(100% - 4px) 50%, calc(100% - 32px) 100%, -28px 100%, 0 50%); }
+      .steps .step:not(:first-child):not(:last-child)::after {
+        content: '';
+        background-color: #e9f0ef;
+        width: 28px;
+        height: 100%;
+        position: absolute;
+        left: -28px;
+        z-index: 2; }
+      .steps .step:not(:first-child):not(:last-child):hover {
+        color: #ffffff;
+        background-color: #b6c6c9; }
+        .steps .step:not(:first-child):not(:last-child):hover:after {
+          background-color: #b6c6c9; }
+    .steps .step:last-child {
+      clip-path: polygon(-28px 0, 100% 0, 100% 100%, -28px 100%, 0 50%); }
+      .steps .step:last-child::after {
+        content: '';
+        background-color: #e9f0ef;
+        width: 28px;
+        height: 100%;
+        position: absolute;
+        left: -28px;
+        z-index: 2; }
+    .steps .step:hover {
+      color: #ffffff;
+      background-color: #b6c6c9; }
+      .steps .step:hover:after {
+        background-color: #b6c6c9; }
+
+button.scroll-up-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #161723;
+  opacity: 0.6;
+  color: #58606c;
+  font-size: 2.4rem; }
+
+@media (max-width: 767.98px) {
+  .steps {
+    height: unset;
+    display: block;
+    border-radius: 5px;
+    overflow: visible; }
+    .steps .step {
+      height: 62px; }
+      .steps .step:not(:first-child) {
+        margin-top: -40px; }
+      .steps .step:nth-of-type(2) {
+        margin-left: 25%; }
+      .steps .step:nth-of-type(3) {
+        margin-left: 50%; }
+      .steps .step:last-child {
+        margin-left: 75%; }
+      .steps .step:hover {
+        color: #ffffff;
+        background-color: #b6c6c9; }
+        .steps .step:hover:after {
+          background-color: #b6c6c9; }
+  .product-briefing {
+    display: flex;
+    flex-wrap: wrap; }
+    .product-briefing-left {
+      width: 100% !important; }
+    .product-briefing-right {
+      width: 100% !important;
+      margin-top: 80px; }
+  .product-tabs-btns {
+    display: none; }
+    .product-tabs-btns .product-tabs-btn {
+      display: none; }
+  .product-tabs .product-tab {
+    display: block !important; }
+    .product-tabs .product-tab-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; }
+      .product-tabs .product-tab-content-item {
+        width: 200px; }
+        .product-tabs .product-tab-content-item:nth-of-type(3n + 2) {
+          margin-left: 0;
+          margin-right: 0; }
+        .product-tabs .product-tab-content-item:nth-of-type(6n + 1), .product-tabs .product-tab-content-item:nth-of-type(6n + 2), .product-tabs .product-tab-content-item:nth-of-type(6n + 3) {
+          padding-bottom: 0;
+          border-bottom: none; } }
+
+@media (max-width: 991.98px) {
+  .categories {
+    display: none; }
+  .main-content {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding: 20px !important; }
+  .hot-topics-content {
+    padding: 110px 40px;
+    display: flex;
+    flex-wrap: wrap; }
+    .hot-topics-content .hot-topic {
+      width: 100% !important; }
+      .hot-topics-content .hot-topic:nth-of-type(3n + 2) {
+        margin: 40px 0 !important; } }
+
 header .slider {
-  background-color: #343748; }
+  background-color: #4a4f60;
+  height: auto;
+  padding: 20px 20px 80px 20px; }
   header .slider-content {
     height: 100%;
     padding-top: 70px;
@@ -1120,6 +1320,7 @@ header .slider {
         font-weight: 300; }
     header .slider-content-sub-title {
       font-size: 2.4rem;
+      line-height: 3rem;
       font-family: "Source Sans Pro", sans-serif;
       font-weight: 300; }
   header .slider .sub-navigation {
@@ -1143,11 +1344,10 @@ header .slider {
     width: 100%;
     display: flex;
     margin: 0 auto;
-    padding-top: 110px;
+    padding: 110px 20px 0 20px;
     margin-bottom: 100px; }
     .container .main-content {
-      width: 100%;
-      margin-right: 40px; }
+      width: 100%; }
       .container .main-content .product-briefing-left {
         width: 50%; }
         .container .main-content .product-briefing-left .gallery-slider-img {
@@ -1185,7 +1385,8 @@ header .slider {
       .container .main-content .product-tabs .product-tab .product-more-info {
         margin-top: 0; }
   .container .new-in-stock {
-    width: 100%; }
+    width: 100%;
+    padding: 0 20px; }
     .container .new-in-stock.s1 {
       background-color: #f0f3f2;
       color: #393d50; }
@@ -1218,179 +1419,184 @@ header .slider {
           font-size: 1.9rem;
           line-height: 3.7rem;
           text-align: center; }
-  .container .bg-product-info.style1 {
-    padding: 30px 0 100px 0;
-    background-color: #f0f3f2; }
-    .container .bg-product-info.style1 > .grid .bg-product-info-content {
-      background-image: url("/img/bg-shoes2.png");
-      background-position: left;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end; }
-      .container .bg-product-info.style1 > .grid .bg-product-info-content-item {
-        width: 50%;
-        display: flex; }
-        .container .bg-product-info.style1 > .grid .bg-product-info-content-item:not(:last-child) {
-          margin-bottom: 55px; }
-        .container .bg-product-info.style1 > .grid .bg-product-info-content-item .icon {
-          flex: 1;
-          margin-right: 40px;
-          display: flex;
-          align-items: flex-start; }
-          .container .bg-product-info.style1 > .grid .bg-product-info-content-item .icon .line {
+  .container .bg-product-info {
+    padding: 0 20px; }
+    .container .bg-product-info.style1 {
+      padding: 30px 0 100px 0;
+      background-color: #f0f3f2; }
+      .container .bg-product-info.style1 > .grid .bg-product-info-content {
+        background-image: url("/img/bg-shoes2.png");
+        background-position: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end; }
+        .container .bg-product-info.style1 > .grid .bg-product-info-content-item {
+          width: 50%;
+          display: flex; }
+          .container .bg-product-info.style1 > .grid .bg-product-info-content-item:not(:last-child) {
+            margin-bottom: 55px; }
+          .container .bg-product-info.style1 > .grid .bg-product-info-content-item .icon {
             flex: 1;
-            height: 1px;
-            background-color: #ccd5da;
-            margin: 25px 0; }
-          .container .bg-product-info.style1 > .grid .bg-product-info-content-item .icon-bg {
-            width: 50px;
-            height: 50px;
-            line-height: 50px;
-            text-align: center;
-            font-size: 2rem;
-            border-radius: 50%;
-            border-width: 1px;
-            border-style: solid;
-            border-color: #ccd5da; }
-            .container .bg-product-info.style1 > .grid .bg-product-info-content-item .icon-bg i {
-              color: #ffc107; }
-        .container .bg-product-info.style1 > .grid .bg-product-info-content-item .text {
-          width: 280px; }
-          .container .bg-product-info.style1 > .grid .bg-product-info-content-item .text .title {
-            width: 100%;
-            color: #3c3950;
-            font-size: 2.4rem;
-            text-transform: uppercase;
-            margin-bottom: 32px; }
-            .container .bg-product-info.style1 > .grid .bg-product-info-content-item .text .title span:first-child {
-              font-family: "Montserrat", sans-serif;
-              font-weight: bold; }
-            .container .bg-product-info.style1 > .grid .bg-product-info-content-item .text .title span:last-child {
-              font-family: "Montserrat", sans-serif;
-              font-weight: 300; }
-          .container .bg-product-info.style1 > .grid .bg-product-info-content-item .text .detail {
-            width: 100%;
-            font-family: "Source Sans Pro", sans-serif;
-            font-weight: 400;
-            color: #5f727f;
-            font-size: 1.6rem; }
-  .container .bg-product-info.style2 {
-    padding: 100px 0;
-    background-color: #25293c; }
-    .container .bg-product-info.style2 > .grid .bg-product-info-content {
-      background-image: url("/img/bg-shoes1.png");
-      background-position: right;
-      color: #ffffff; }
-      .container .bg-product-info.style2 > .grid .bg-product-info-content .title {
-        width: 50%;
-        font-family: "Montserrat", sans-serif;
-        font-weight: 300;
-        font-size: 5rem;
-        line-height: 5rem;
-        text-transform: uppercase;
-        margin-bottom: 60px; }
-      .container .bg-product-info.style2 > .grid .bg-product-info-content .suggest-size {
-        width: 50%;
-        font-size: 1.6rem;
-        font-family: "Source Sans Pro", sans-serif;
-        font-weight: 400;
-        color: #99a9b5; }
-        .container .bg-product-info.style2 > .grid .bg-product-info-content .suggest-size .icon {
-          width: 50px;
-          height: 56px;
-          background-color: #656094;
-          margin: 0 14px 14px 0;
-          float: left;
-          clear: both;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          clip-path: polygon(50% 0%, 100% 23%, 100% 77%, 50% 100%, 0 77%, 0 23%); }
-          .container .bg-product-info.style2 > .grid .bg-product-info-content .suggest-size .icon i {
-            font-size: 2rem;
-            color: #ffffff; }
-        .container .bg-product-info.style2 > .grid .bg-product-info-content .suggest-size .size-table {
-          margin-top: 60px;
-          border-collapse: collapse;
-          width: 100%;
-          text-align: center;
-          border: 1px solid #666e80; }
-          .container .bg-product-info.style2 > .grid .bg-product-info-content .suggest-size .size-table tr {
-            height: 60px; }
-            .container .bg-product-info.style2 > .grid .bg-product-info-content .suggest-size .size-table tr th {
-              font-family: "Montserrat", sans-serif;
-              font-weight: bold;
-              font-size: 1.6rem;
-              color: #ffce3b;
-              text-transform: uppercase; }
-              .container .bg-product-info.style2 > .grid .bg-product-info-content .suggest-size .size-table tr th:not(:first-child) {
-                width: 15%; }
-            .container .bg-product-info.style2 > .grid .bg-product-info-content .suggest-size .size-table tr td {
+            margin-right: 40px;
+            display: flex;
+            align-items: flex-start; }
+            .container .bg-product-info.style1 > .grid .bg-product-info-content-item .icon .line {
+              flex: 1;
+              height: 1px;
+              background-color: #ccd5da;
+              margin: 25px 0; }
+            .container .bg-product-info.style1 > .grid .bg-product-info-content-item .icon-bg {
+              width: 50px;
+              height: 50px;
+              line-height: 50px;
+              text-align: center;
+              font-size: 2rem;
+              border-radius: 50%;
+              border-width: 1px;
+              border-style: solid;
+              border-color: #ccd5da; }
+              .container .bg-product-info.style1 > .grid .bg-product-info-content-item .icon-bg i {
+                color: #ffc107; }
+          .container .bg-product-info.style1 > .grid .bg-product-info-content-item .text {
+            width: 280px; }
+            .container .bg-product-info.style1 > .grid .bg-product-info-content-item .text .title {
+              width: 100%;
+              color: #3c3950;
+              font-size: 2.4rem;
+              text-transform: uppercase;
+              margin-bottom: 32px; }
+              .container .bg-product-info.style1 > .grid .bg-product-info-content-item .text .title span:first-child {
+                font-family: "Montserrat", sans-serif;
+                font-weight: bold; }
+              .container .bg-product-info.style1 > .grid .bg-product-info-content-item .text .title span:last-child {
+                font-family: "Montserrat", sans-serif;
+                font-weight: 300; }
+            .container .bg-product-info.style1 > .grid .bg-product-info-content-item .text .detail {
+              width: 100%;
               font-family: "Source Sans Pro", sans-serif;
               font-weight: 400;
-              font-size: 1.6rem;
-              color: #99a9b5;
-              border: 1px solid #666e80; }
-              .container .bg-product-info.style2 > .grid .bg-product-info-content .suggest-size .size-table tr td:not(:first-child) {
-                width: 15%; }
-  .container .bg-product-info-content {
-    min-height: 540px;
-    background-size: contain;
-    background-repeat: no-repeat; }
-  .container .product-benefits-top, .container .product-benefits-bottom {
-    width: 100%;
-    display: flex; }
-    .container .product-benefits-top > *, .container .product-benefits-bottom > * {
-      width: calc(100% / 3);
-      height: 60px;
-      box-sizing: border-box;
-      border-left: 1px dashed #48455b; }
-  .container .product-benefits .box {
-    display: flex; }
-    .container .product-benefits .box .product-benefit {
-      width: calc((100% - 144px) / 3);
-      margin: 100px 0;
-      box-sizing: border-box;
-      display: flex; }
-      .container .product-benefits .box .product-benefit:not(:last-child) {
-        margin-right: 72px; }
-      .container .product-benefits .box .product-benefit .content {
-        flex: 1; }
-        .container .product-benefits .box .product-benefit .content .title {
+              color: #5f727f;
+              font-size: 1.6rem; }
+    .container .bg-product-info.style2 {
+      padding: 100px 0;
+      background-color: #25293c; }
+      .container .bg-product-info.style2 > .grid .bg-product-info-content {
+        background-image: url("/img/bg-shoes1.png");
+        background-position: right;
+        color: #ffffff; }
+        .container .bg-product-info.style2 > .grid .bg-product-info-content .title {
+          width: 50%;
           font-family: "Montserrat", sans-serif;
           font-weight: 300;
-          font-size: 1.6rem;
-          color: #48455b;
+          font-size: 5rem;
+          line-height: 5rem;
           text-transform: uppercase;
-          line-height: 3rem; }
-          .container .product-benefits .box .product-benefit .content .title span {
-            font-weight: bold; }
-        .container .product-benefits .box .product-benefit .content .text {
-          margin-top: 50px;
+          margin-bottom: 60px; }
+        .container .bg-product-info.style2 > .grid .bg-product-info-content .suggest-size {
+          width: 50%;
+          font-size: 1.6rem;
           font-family: "Source Sans Pro", sans-serif;
           font-weight: 400;
-          font-size: 1.6rem;
-          color: #5f727f;
-          line-height: 2.5rem; }
-        .container .product-benefits .box .product-benefit .content .btn {
-          margin-top: 60px;
-          width: fit-content;
-          box-sizing: border-box;
-          height: 30px;
-          line-height: 30px;
-          padding: 0 20px;
-          border: 2px solid #00bcd4;
-          border-radius: 2px;
-          font-family: "Montserrat", sans-serif;
-          font-weight: bold;
-          font-size: 1.4rem;
-          color: #00bcd4;
-          text-transform: uppercase; }
-      .container .product-benefits .box .product-benefit .icon i {
-        margin-left: 70px;
-        font-size: 3.2rem;
-        color: #48455b; }
+          color: #99a9b5; }
+          .container .bg-product-info.style2 > .grid .bg-product-info-content .suggest-size .icon {
+            width: 50px;
+            height: 56px;
+            background-color: #656094;
+            margin: 0 14px 14px 0;
+            float: left;
+            clear: both;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            clip-path: polygon(50% 0%, 100% 23%, 100% 77%, 50% 100%, 0 77%, 0 23%); }
+            .container .bg-product-info.style2 > .grid .bg-product-info-content .suggest-size .icon i {
+              font-size: 2rem;
+              color: #ffffff; }
+          .container .bg-product-info.style2 > .grid .bg-product-info-content .suggest-size .size-table {
+            margin-top: 60px;
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+            border: 1px solid #666e80; }
+            .container .bg-product-info.style2 > .grid .bg-product-info-content .suggest-size .size-table tr {
+              height: 60px; }
+              .container .bg-product-info.style2 > .grid .bg-product-info-content .suggest-size .size-table tr th {
+                font-family: "Montserrat", sans-serif;
+                font-weight: bold;
+                font-size: 1.6rem;
+                color: #ffce3b;
+                text-transform: uppercase; }
+                .container .bg-product-info.style2 > .grid .bg-product-info-content .suggest-size .size-table tr th:not(:first-child) {
+                  width: 15%; }
+              .container .bg-product-info.style2 > .grid .bg-product-info-content .suggest-size .size-table tr td {
+                font-family: "Source Sans Pro", sans-serif;
+                font-weight: 400;
+                font-size: 1.6rem;
+                color: #99a9b5;
+                border: 1px solid #666e80; }
+                .container .bg-product-info.style2 > .grid .bg-product-info-content .suggest-size .size-table tr td:not(:first-child) {
+                  width: 15%; }
+    .container .bg-product-info-content {
+      min-height: 540px;
+      background-size: contain;
+      background-repeat: no-repeat; }
+  .container .product-benefits {
+    padding: 0 20px; }
+    .container .product-benefits-top, .container .product-benefits-bottom {
+      width: 100%;
+      display: flex; }
+      .container .product-benefits-top > *, .container .product-benefits-bottom > * {
+        width: calc(100% / 3);
+        height: 60px;
+        box-sizing: border-box;
+        border-left: 1px dashed #48455b; }
+    .container .product-benefits .box {
+      display: flex; }
+      .container .product-benefits .box .product-benefit {
+        width: calc((100% - 144px) / 3);
+        margin: 100px 0;
+        box-sizing: border-box;
+        display: flex; }
+        .container .product-benefits .box .product-benefit:not(:last-child) {
+          margin-right: 72px; }
+        .container .product-benefits .box .product-benefit .content {
+          flex: 1; }
+          .container .product-benefits .box .product-benefit .content .title {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 300;
+            font-size: 1.6rem;
+            color: #48455b;
+            text-transform: uppercase;
+            line-height: 3rem; }
+            .container .product-benefits .box .product-benefit .content .title span {
+              font-weight: bold; }
+          .container .product-benefits .box .product-benefit .content .text {
+            margin-top: 50px;
+            font-family: "Source Sans Pro", sans-serif;
+            font-weight: 400;
+            font-size: 1.6rem;
+            color: #5f727f;
+            line-height: 2.5rem; }
+          .container .product-benefits .box .product-benefit .content .btn {
+            margin-top: 60px;
+            width: fit-content;
+            box-sizing: border-box;
+            height: 30px;
+            line-height: 30px;
+            padding: 0 20px;
+            border: 2px solid #00bcd4;
+            border-radius: 2px;
+            font-family: "Montserrat", sans-serif;
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: #00bcd4;
+            text-transform: uppercase; }
+        .container .product-benefits .box .product-benefit .icon i {
+          margin-left: 70px;
+          font-size: 3.2rem;
+          color: #48455b; }
   .container .product-text {
+    padding: 0 20px;
     margin: 80px auto; }
     .container .product-text-content {
       width: 100%;
@@ -1414,6 +1620,7 @@ header .slider {
         line-height: 3.7rem;
         background-color: #333144; }
   .container .product-imgs {
+    padding: 0 20px;
     clear: both;
     margin-bottom: 988px; }
     .container .product-imgs > * {
@@ -1430,3 +1637,51 @@ header .slider {
     .container .product-imgs-3 {
       width: 50%;
       height: 424px; }
+
+@media (max-width: 767.98px) {
+  .product-benefits .box {
+    display: flex;
+    flex-wrap: wrap; }
+    .product-benefits .box .product-benefit {
+      width: 100% !important;
+      margin: 40px 0 !important;
+      box-sizing: border-box;
+      display: flex; }
+      .product-benefits .box .product-benefit:not(:last-child) {
+        margin-right: 72px; }
+      .product-benefits .box .product-benefit .content {
+        flex: 1; }
+        .product-benefits .box .product-benefit .content .title {
+          font-family: "Montserrat", sans-serif;
+          font-weight: 300;
+          font-size: 1.6rem;
+          color: #48455b;
+          text-transform: uppercase;
+          line-height: 3rem; }
+          .product-benefits .box .product-benefit .content .title span {
+            font-weight: bold; }
+        .product-benefits .box .product-benefit .content .text {
+          margin-top: 50px;
+          font-family: "Source Sans Pro", sans-serif;
+          font-weight: 400;
+          font-size: 1.6rem;
+          color: #5f727f;
+          line-height: 2.5rem; }
+        .product-benefits .box .product-benefit .content .btn {
+          margin-top: 60px;
+          width: fit-content;
+          box-sizing: border-box;
+          height: 30px;
+          line-height: 30px;
+          padding: 0 20px;
+          border: 2px solid #00bcd4;
+          border-radius: 2px;
+          font-family: "Montserrat", sans-serif;
+          font-weight: bold;
+          font-size: 1.4rem;
+          color: #00bcd4;
+          text-transform: uppercase; }
+      .product-benefits .box .product-benefit .icon i {
+        margin-left: 70px;
+        font-size: 3.2rem;
+        color: #48455b; } }

@@ -1289,7 +1289,7 @@ header .slider {
   height: 200px;
   background-color: #e9f0ef; }
   header .slider .grid {
-    margin: 40px auto 0 auto;
+    margin: 40px auto;
     background-image: url("/img/check-logo.svg");
     background-position: right;
     background-repeat: no-repeat;
@@ -1297,8 +1297,7 @@ header .slider {
     header .slider .grid .slider-content {
       display: flex;
       color: #3c3950;
-      height: 120px;
-      padding: 0 20px; }
+      height: 120px; }
       header .slider .grid .slider-content-title {
         text-transform: uppercase;
         font-size: 5rem;
@@ -1324,163 +1323,248 @@ header .slider {
   padding: 78px 0 100px 0; }
   .container .main {
     padding: 0 20px; }
-    .container .main .noti {
-      width: 100%;
-      padding: 24px 28px;
-      background-color: #84ec71;
-      border-radius: 5px;
-      font-family: "Source Sans Pro", sans-serif;
-      font-weight: 300;
-      color: #3c3950;
-      font-size: 2.4rem;
-      line-height: 3rem;
+    .container .main .form-login {
+      margin-top: 120px;
       display: flex;
-      align-items: center;
-      position: relative;
-      animation: slideInFromTop linear 1s;
-      box-sizing: border-box; }
-      .container .main .noti .icon {
-        min-width: 50px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: #6eb667;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 20px; }
-        .container .main .noti .icon i {
-          font-size: 2.5rem;
-          color: #3c3950; }
-      .container .main .noti .close-btn {
-        position: absolute;
-        padding: 5px;
-        font-size: 2rem;
-        right: 20px;
-        top: calc(50% - 15px); }
-        .container .main .noti .close-btn:hover {
-          background-color: #6eb667; }
-    .container .main .checkout-info {
-      margin-top: 44px;
       font-family: "Source Sans Pro", sans-serif;
       font-weight: 400;
-      font-size: 1.6rem;
-      color: #5f727f; }
-      .container .main .checkout-info-item {
-        line-height: 3.6rem; }
-        .container .main .checkout-info-item i {
-          margin-right: 10px;
-          color: #6eb667; }
-        .container .main .checkout-info-item span {
-          font-weight: bold; }
-      .container .main .checkout-info div {
-        margin-top: 32px; }
-    .container .main .order-info {
-      margin-top: 80px;
-      display: flex; }
-      .container .main .order-info .title {
+      color: #5f727f;
+      font-size: 1.6rem; }
+      .container .main .form-login .title {
         font-family: "Montserrat", sans-serif;
-        font-weight: 300;
+        font-weight: 200;
+        color: #3c3950;
         font-size: 3.6rem;
         line-height: 4rem;
-        text-transform: uppercase;
-        color: #3c3950;
-        margin-bottom: 50px; }
-      .container .main .order-info .cart-totals,
-      .container .main .order-info .order-detail {
-        width: calc((100% - 40px) / 2); }
-        .container .main .order-info .cart-totals table,
-        .container .main .order-info .order-detail table {
-          border-collapse: collapse;
+        margin-bottom: 40px;
+        text-transform: uppercase; }
+        .container .main .form-login .title i {
+          margin-right: 14px; }
+      .container .main .form-login .exist-customer {
+        width: calc(50% - 20px);
+        margin-right: 40px; }
+        .container .main .form-login .exist-customer .login-input {
+          margin-bottom: 10px; }
+          .container .main .form-login .exist-customer .login-input input {
+            margin-top: 12px;
+            margin-bottom: 20px;
+            height: 40px;
+            width: 100%;
+            padding-left: 12px;
+            box-sizing: border-box; }
+          .container .main .form-login .exist-customer .login-input span {
+            color: red; }
+        .container .main .form-login .exist-customer .login-btns {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center; }
+          .container .main .form-login .exist-customer .login-btns .login-enter {
+            height: 50px;
+            width: 130px;
+            color: #00bcd4;
+            border: 3px solid #00bcd4;
+            border-radius: 3px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Montserrat", sans-serif;
+            font-weight: bold;
+            font-size: 1.9rem;
+            margin-right: 28px; }
+          .container .main .form-login .exist-customer .login-btns input {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px; }
+          .container .main .form-login .exist-customer .login-btns .lostPassword {
+            height: 30px;
+            padding-left: 20px;
+            margin-left: 15px;
+            border-left: 1px solid #dfe5e8; }
+            .container .main .form-login .exist-customer .login-btns .lostPassword-link {
+              color: #00bcd4;
+              line-height: 30px;
+              vertical-align: middle; }
+      .container .main .form-login .new-customer {
+        width: calc(50% - 20px); }
+        .container .main .form-login .new-customer .btn {
           width: 100%;
-          border: 1px solid #dfe5e8; }
-      .container .main .order-info .order-detail table tr {
-        box-sizing: border-box; }
-        .container .main .order-info .order-detail table tr:nth-of-type(2n + 1):not(:first-child) {
-          background-color: #f0f3f2; }
-        .container .main .order-info .order-detail table tr th {
-          height: 60px;
-          background-color: #b6c6c9;
+          height: 40px;
+          text-transform: uppercase;
           font-family: "Montserrat", sans-serif;
           font-weight: bold;
           font-size: 1.6rem;
           color: #ffffff;
-          text-transform: uppercase; }
-        .container .main .order-info .order-detail table tr td {
-          flex-wrap: nowrap;
-          align-items: center;
-          box-sizing: border-box; }
-          .container .main .order-info .order-detail table tr td:first-child {
-            width: 60%;
-            font-family: "Source Sans Pro", sans-serif;
-            font-weight: 400;
-            color: #00bcd4;
-            font-size: 1.6rem;
-            line-height: 100%;
-            padding: 17px 20px; }
-          .container .main .order-info .order-detail table tr td:not(:first-child) {
-            text-align: center;
-            width: 20%; }
-          .container .main .order-info .order-detail table tr td:last-child {
-            font-size: 2.4rem;
-            font-family: "Source Sans Pro", sans-serif;
-            font-weight: 400; }
-          .container .main .order-info .order-detail table tr td .product-img {
-            width: 60px;
-            height: 60px;
-            background-color: #99a9b5;
-            margin-right: 20px;
-            float: left;
-            clear: both; }
-      .container .main .order-info .cart-totals {
-        margin-left: 40px; }
-        .container .main .order-info .cart-totals table tr td {
-          width: 50%;
-          height: 52px;
-          border: 1px solid #dfe5e8;
-          padding-left: 28px;
-          font-family: "Source Sans Pro", sans-serif;
-          font-weight: 400;
-          font-size: 1.6rem;
-          color: #5f727f; }
-          .container .main .order-info .cart-totals table tr td:first-child {
-            background-color: #f0f3f2; }
-          .container .main .order-info .cart-totals table tr td.total {
-            font-size: 2.4rem;
-            color: #393d50; }
-    .container .main .bill-info {
-      margin-top: 88px;
-      display: flex;
+          border-radius: 3px;
+          line-height: 40px;
+          text-align: center; }
+          .container .main .form-login .new-customer .btn:hover {
+            opacity: 0.7; }
+        .container .main .form-login .new-customer .login-guest {
+          margin-top: 68px;
+          margin-bottom: 46px;
+          background-color: #99a9b5; }
+        .container .main .form-login .new-customer .create-account {
+          background-color: #00bcd4; }
+    .container .main .overlayBackground {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      animation: fade linear 0.5s;
+      z-index: 5; }
+    .container .main #overlayCheckbox:checked ~ .overlayBackground,
+    .container .main #overlayCheckbox:checked ~ .register-box {
+      display: none; }
+    .container .main .register-box {
+      position: fixed;
+      max-width: 768px;
+      width: 100%;
+      min-height: 440px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #555555;
+      background-color: #ffffff;
+      left: calc(50% - 384px);
+      top: calc(50% - 220px);
+      z-index: 6;
+      animation: fade linear 0.5s;
+      padding: 54px;
+      box-sizing: border-box;
       font-family: "Source Sans Pro", sans-serif;
       font-weight: 400;
-      color: #5f727f; }
-      .container .main .bill-info > * {
-        width: calc(100% / 3);
-        line-height: 3.6rem;
-        font-size: 1.6rem; }
-        .container .main .bill-info > * span {
-          font-weight: bold; }
-      .container .main .bill-info .title {
-        margin-bottom: 30px;
+      font-size: 1.6rem;
+      color: #5f727f;
+      display: flex;
+      flex-direction: column; }
+      .container .main .register-box .title {
         font-family: "Montserrat", sans-serif;
-        font-weight: 300;
-        font-size: 2.9rem;
-        color: #3c3950;
-        text-transform: uppercase; }
+        font-weight: 200;
+        font-size: 3.6rem;
+        line-height: 4rem;
+        color: #3c3950; }
+        .container .main .register-box .title i {
+          margin-right: 20px; }
+      .container .main .register-box .text {
+        margin-top: 60px; }
+      .container .main .register-box .input-content {
+        margin-top: 44px; }
+        .container .main .register-box .input-content span {
+          color: red; }
+        .container .main .register-box .input-content input {
+          margin-top: 12px;
+          height: 40px;
+          box-sizing: border-box;
+          padding-left: 16px;
+          width: 100%;
+          letter-spacing: 6px;
+          font-size: 2.4rem;
+          color: #99a9b5; }
+      .container .main .register-box .buttons {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; }
+        .container .main .register-box .buttons .check {
+          display: flex;
+          align-items: center; }
+          .container .main .register-box .buttons .check input {
+            width: 24px;
+            height: 24px;
+            box-sizing: border-box;
+            margin-right: 14px; }
+        .container .main .register-box .buttons .enter-btn {
+          height: 50px;
+          width: 142px;
+          border: 3px solid #00bcd4;
+          border-radius: 3px;
+          line-height: 50px;
+          text-align: center;
+          font-family: "Montserrat", sans-serif;
+          font-weight: bold;
+          font-size: 1.9rem;
+          color: #00bcd4; }
 
 @media (max-width: 767.908px) {
-  .container .main .order-info {
+  .form-login {
+    margin-top: 40px !important;
     flex-wrap: wrap; }
-    .container .main .order-info .cart-totals,
-    .container .main .order-info .order-detail {
-      width: 100%; }
-    .container .main .order-info .cart-totals {
-      margin: 40px 0 0 0; }
-  .container .main .bill-info {
-    flex-wrap: wrap; }
-    .container .main .bill-info > * {
-      width: 100%;
-      margin-bottom: 40px; } }
+    .form-login .title {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 200;
+      color: #3c3950;
+      font-size: 3.6rem;
+      margin-bottom: 40px;
+      text-transform: uppercase; }
+      .form-login .title i {
+        margin-right: 14px; }
+    .form-login .exist-customer {
+      width: 100% !important;
+      margin-right: 0 !important; }
+    .form-login .new-customer {
+      width: 100% !important;
+      margin-top: 40px; }
+  .register-box {
+    left: 0 !important;
+    top: calc(50% - 220px);
+    z-index: 6;
+    animation: fade linear 0.5s;
+    padding: 54px;
+    box-sizing: border-box;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: #5f727f;
+    display: flex;
+    flex-direction: column; }
+    .register-box .title {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 200;
+      font-size: 3.6rem;
+      line-height: 4rem;
+      color: #3c3950; }
+      .register-box .title i {
+        margin-right: 20px; }
+    .register-box .text {
+      margin-top: 60px; }
+    .register-box .input-content {
+      margin-top: 44px; }
+      .register-box .input-content span {
+        color: red; }
+      .register-box .input-content input {
+        margin-top: 12px;
+        height: 40px;
+        box-sizing: border-box;
+        padding-left: 16px;
+        width: 100%;
+        letter-spacing: 6px;
+        font-size: 2.4rem;
+        color: #99a9b5; }
+    .register-box .buttons {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      .register-box .buttons .check {
+        display: flex;
+        align-items: center; }
+        .register-box .buttons .check input {
+          width: 24px;
+          height: 24px;
+          box-sizing: border-box;
+          margin-right: 14px; }
+      .register-box .buttons .enter-btn {
+        height: 50px;
+        width: 142px;
+        border: 3px solid #00bcd4;
+        border-radius: 3px;
+        line-height: 50px;
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold;
+        font-size: 1.9rem;
+        color: #00bcd4; } }
 
 @media (max-width: 991.98px) {
   header .sub-navigation {

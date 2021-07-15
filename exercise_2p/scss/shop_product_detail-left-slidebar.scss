@@ -1,23 +1,22 @@
 @import 'variables';
 @import 'root';
-@use "scss/shop_main_page";
 
 // overwrite header
 header {
     .slider {
-        background-color: #6a6f7d;
+        background-color: #e3f1e2;
         &-content {
             height: 100%;
             padding-top: 70px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: #ffffff;
+            color: #3c3950;
             &-symbol {
                 width: 80px;
                 height: 80px;
                 border-radius: 50%;
-                background-color: #f94c4f;
+                background-color: #5cc692;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -43,25 +42,25 @@ header {
             }
         }
         .sub-navigation {
+            left: calc(50% - 190px);
             a {
-                color: #ffffff !important;
+                color: #00bcd4 !important;
                 &:hover {
                     opacity: 0.7;
                 }
             }
             .mark-level {
-                color: #fed548 !important;
+                color: #99a9b5 !important;
                 &::after {
-                    background-color: #fed548;
+                    background-color: #ff5252;
                 }
             }
             i {
-                color: #fed548;
+                color: #5f727f;
             }
         }
     }
 }
-
 .container {
     width: 100vw;
     .main {
@@ -69,10 +68,8 @@ header {
         width: 100%;
         display: flex;
         margin: 0 auto;
-        padding-top: 110px;
+        padding:  110px 20px 0 20px;
         margin-bottom: 100px;
-        // font-size: 1.6rem;
-        // @include sourceSansPro-regular;
         &-content {
             width: 75%;
             margin-left: 40px;
@@ -128,8 +125,8 @@ header {
         max-width: 1200px;
         width: 100%;
         margin: 0 auto;
-        margin-top: 120px;
         display: flex;
+        padding:  110px 20px 0 20px;
         &-categories {
             width: 25%;
             box-sizing: border-box;
@@ -257,6 +254,7 @@ header {
                     @include montserrat-light;
                     color: #3c3950;
                     font-size: 2.8rem;
+                    line-height: 3.2rem;
                 }
                 &-content {
                     margin-top: 52px;
@@ -365,31 +363,46 @@ footer{
                 bottom: 2px solid #617180;
             }
         }
-        .btn{
-            height: 80px;
-            padding: 0 58px;
-            box-sizing: border-box;
-            font-size: 2.4rem;
-            text-transform: uppercase;
-            @include montserrat-light;
+        &-content{
+            width: fit-content;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            i{
-                margin-right: 24px;
-                font-size: 4.8rem;
+            justify-content: space-around ;
+            .btn{
+                height: 80px;
+                width: 300px;
+                margin: 10px;
+                box-sizing: border-box;
+                font-size: 2.4rem;
+                text-transform: uppercase;
+                @include montserrat-light;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                i{
+                    margin-right: 24px;
+                    font-size: 4.8rem;
+                }
+            }
+            .slogan-btn1{
+                color: #00ffff;
+                border: 1px solid  #00ffff;                
+            }
+            .slogan-btn2{
+                color: #ffa749;
+                border: 1px solid  #ffa749;
             }
         }
-        .slogan-btn1{
-            color: #00ffff;
-            border: 1px solid  #00ffff;
-            margin: 0 40px;
-            
+    }
+}
+
+@media (max-width: 991.98px){
+    .more {
+        &-categories {
+            display: none;   
         }
-        .slogan-btn2{
-            color: #ffa749;
-            border: 1px solid  #ffa749;
-            margin-right: 40px;
+        &-content {
+            margin-left: 0 !important;
+            width: 100% !important;
         }
     }
 }

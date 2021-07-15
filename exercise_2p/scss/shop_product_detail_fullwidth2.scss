@@ -1,11 +1,12 @@
 @import 'variables';
 @import 'root';
-@use "scss/shop_main_page";
 
 // overwrite header
 header {
     .slider {
-        background-color: #343748;
+        background-color: #4a4f60;
+        height: auto;
+        padding: 20px 20px 80px 20px;
         &-content {
             height: 100%;
             padding-top: 70px;
@@ -40,6 +41,7 @@ header {
             }
             &-sub-title {
                 font-size: 2.4rem;
+                line-height: 3rem;
                 @include sourceSansPro-light;
             }
         }
@@ -72,13 +74,10 @@ header {
         width: 100%;
         display: flex;
         margin: 0 auto;
-        padding-top: 110px;
+        padding: 110px 20px 0 20px;
         margin-bottom: 100px;
-        // font-size: 1.6rem;
-        // @include sourceSansPro-regular;
         &-content {
             width: 100%;
-            margin-right: 40px;
             .product {
                 &-briefing {
                     &-left {
@@ -142,6 +141,7 @@ header {
     }
     .new-in-stock {
         width: 100%;
+        padding: 0 20px;
         &.s1 {
             background-color: #f0f3f2;
             color: #393d50;
@@ -181,6 +181,8 @@ header {
         }
     }
     .bg-product-info {
+        padding: 0 20px;
+
         &.style1 {
             padding: 30px 0 100px 0;
             background-color: #f0f3f2;
@@ -336,6 +338,7 @@ header {
         }
     }
     .product-benefits {
+        padding: 0 20px;
         &-top, &-bottom {
             width: 100%;
             display: flex;
@@ -402,6 +405,7 @@ header {
         }
     }
     .product-text{
+        padding: 0 20px;
         margin: 80px auto;
         &-content{
             width: 100%;
@@ -427,6 +431,7 @@ header {
         }
     }
     .product-imgs{
+        padding: 0 20px;
         clear: both;
         margin-bottom: 988px;
         & > *{
@@ -446,6 +451,68 @@ header {
         &-3{
             width: 50%;
             height: 424px
+        }
+    }
+}
+
+
+
+@media (max-width: 767.98px){
+    .product-benefits {
+        .box{
+            display: flex;
+            flex-wrap: wrap;
+            .product-benefit{
+                width: 100% !important;
+                margin: 40px 0 !important;
+                box-sizing: border-box;
+                display: flex;
+                &:not(:last-child){
+                    margin-right: 72px;
+                }
+                .content{
+                    flex: 1;
+                    .title{
+                        @include montserrat-light;
+                        font-size: 1.6rem;
+                        color: #48455b;
+                        text-transform: uppercase;
+                        line-height: 3rem;
+                        span{
+                            font-weight: bold;
+                        }
+                    }
+                    .text{
+                        margin-top: 50px;
+                        @include sourceSansPro-regular;
+                        font-size: 1.6rem;
+                        color: #5f727f;
+                        line-height: 2.5rem;
+                    }
+                    .btn{
+                        margin-top: 60px;
+                        width: fit-content;
+                        box-sizing: border-box;
+                        height: 30px;
+                        line-height: 30px;
+                        padding: 0 20px;
+                        border: 2px solid #00bcd4;
+                        border-radius: 2px;
+                        @include montserrat-bold;
+                        font-size: 1.4rem;
+                        color: #00bcd4;
+                        text-transform: uppercase;
+                    }
+                }
+                .icon{
+
+                    i{
+                        margin-left: 70px;
+                        font-size: 3.2rem;
+                        color: #48455b;
+                    }
+                }
+            }
         }
     }
 }

@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHOP_CHECKOUT_CONFIRM</title>
+    <title>SHOP_CHECKOU_STEP3</title>
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/shop_checkout_confirm.css">
+    <link rel="stylesheet" href="/css/shop_checkout_step3.css">
     <link rel="stylesheet" href="/font/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -191,131 +191,126 @@
         <!-- start container -->
         <div class="container">
             <div class="main grid">
-                <div class="noti">
-                    <div class="icon">
-                        <i class="ti-check"></i>
+                <div class="steps noselect">
+                    <div class="step onStep">1. sign in</div>
+                    <div class="step">2. billing</div>
+                    <div class="step">3. payment</div>
+                    <div class="step">4. confirmation</div>
+                </div>
+                <div class="order-products">
+                    <div class="title"><i class="fas fa-shopping-cart"></i>your order</div>
+                    <table class="products-table">
+                        <tr>
+                            <th>product</th>
+                            <th>quantity</th>
+                            <th>total</th>
+                        </tr>
+                        <tr>
+                            <td class="product">
+                                <div class="product-img"></div>
+                                <div class="product-summary">Lorem ipsum dolor sit amet consectetur.</div>
+                                <div class="product-option">Size: L, Color: Black</div>
+                            </td>
+                            <td>1</td>
+                            <td>$35.99</td>
+                        </tr>
+                        <tr>
+                            <td class="product">
+                                <div class="product-img"></div>
+                                <div class="product-summary">Lorem ipsum dolor sit amet consectetur.</div>
+                            </td>
+                            <td>1</td>
+                            <td>$35.99</td>
+                        </tr>
+                        <tr>
+                            <td class="product">
+                                <div class="product-img"></div>
+                                <div class="product-summary">Lorem ipsum dolor sit amet consectetur.</div>
+                                <div class="product-option">Size: L, Color: Black</div>
+                            </td>
+                            <td>1</td>
+                            <td>$35.99</td>
+                        </tr>
+                        <tr>
+                            <td class="product">
+                                <div class="product-img"></div>
+                                <div class="product-summary">Lorem ipsum dolor sit amet consectetur.</div>
+                            </td>
+                            <td>1</td>
+                            <td>$35.99</td>
+                        </tr>
+                        <tr>
+                            <td class="product">
+                                <div class="product-img"></div>
+                                <div class="product-summary">Lorem ipsum dolor sit amet consectetur.</div>
+                                <div class="product-option">Size: L, Color: Black</div>
+                            </td>
+                            <td>1</td>
+                            <td>$35.99</td>
+                        </tr>
+                        <tr>
+                            <td class="product">
+                                <div class="product-img"></div>
+                                <div class="product-summary">Lorem ipsum dolor sit amet consectetur.</div>
+                            </td>
+                            <td>1</td>
+                            <td>$35.99</td>
+                        </tr>
+                        <tr class="row-cash">
+                            <td rowspan="3" colspan="1" >
+                                <input type="text" name="couponCode" id="" placeholder="Enter Coupon Code Here..">
+                                <div class="apply-btn noselect">APPLY</div>
+                            </td>
+                            <td colspan="2">
+                                <table>
+                                    <tr>
+                                        <td>Cart Subtotal</td>
+                                        <td style="font-size: 2rem;; color: #3c3950;">$35.99</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shipping And Handling</td>
+                                        <td class="free-shipping" style="color: #99a9b5">Free Shipping </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Order Total</td>
+                                        <td style="font-size: 2.4rem ; color: #00bcd4 ;">$2021.00</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="payment-method">
+                        <input type="radio" name="paymentMethod" id="paymentMethod1"> Direct Bank Transfer <label
+                            for="paymentMethod1" class="payment-method-info">
+                            <div class="icon">
+                                <i class="ti-check"></i>
+                            </div> Make your payment directly into our bank account. Please use your Order ID as the
+                            payment reference. Your order won’t be shipped until the funds have cleared in our account.
+                        </label>
                     </div>
-                    Thank you. Your order has been received.
-                    <div class="close-btn" onclick="closeParentBtn(this)">
-                        <i class="ti-close"></i>
+                    <div class="payment-method">
+                        <input type="radio" name="paymentMethod" id="paymentMethod2"> Cheque Payment <label
+                            for="paymentMethod2" class="payment-method-info">
+                            <div class="icon">
+                                <i class="ti-check"></i>
+                            </div> Make your payment directly into our bank account. Please use your Order ID as the
+                            payment reference. Your order won’t be shipped until the funds have cleared in our account.
+                        </label>
+                    </div>
+                    <div class="payment-method">
+                        <div class="paypal">
+                            <div class="content">
+                                <input type="radio" name="paymentMethod" id=""> PayPal &#160 <a href="#">What is
+                                    PayPal?</a>
+                            </div>
+                            <div class="payment-method-img" style="background-image: url('/img/paypal.png');">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="checkout-info">
-                    <div class="checkout-info-item">
-                        <i class="ti-check-box"></i>
-                        Order: 
-                        <span>11463</span>
-                    </div>
-                    <div class="checkout-info-item">
-                        <i class="ti-check-box"></i>
-                        Date: 
-                        <span>July 9, 2021</span>
-                    </div>
-                    <div class="checkout-info-item">
-                        <i class="ti-check-box"></i>
-                        Total: 
-                        <span>$99.99</span>
-                    </div>
-                    <div class="checkout-info-item">
-                        <i class="ti-check-box"></i>
-                        Payment method: 
-                        <span>Cash on Dlivery</span>
-                    </div>
-                    <div>Pay with cast upon  delivery.</div>
-                </div>
-                <div class="order-info">
-                    <div class="order-detail">
-                        <div class="title">order details</div>
-                        <div class="order-detail-table">
-                            <table>
-                                <tr>
-                                    <th>product</th>
-                                    <th>quantity</th>
-                                    <th>total</th>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="product-img"></div>
-                                        <div class="product-summary">Lorem ipsum dolor sit amet consectetur.</div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>$35.99</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="product-img"></div>
-                                        <div class="product-summary">Lorem ipsum dolor sit amet consectetur.</div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>$35.99</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="product-img"></div>
-                                        <div class="product-summary">Lorem ipsum dolor sit amet consectetur.</div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>$35.99</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="cart-totals">
-                        <div class="title">cart <i class="fas fa-tachometer-alt-slow    "></i></div>
-                        <div class="cart-totals-table">
-                            <table>
-                                <tr>
-                                    <td>Sabtotal</td>
-                                    <td>$99.99</td>
-                                </tr>
-                                <tr>
-                                    <td>Shipping</td>
-                                    <td>Free Shipping</td>
-                                </tr>
-                                <tr>
-                                    <td>Payment Method</td>
-                                    <td>Cash on Delivery</td>
-                                </tr>
-                                <tr>
-                                    <td>Total</td>
-                                    <td class="total">$99.99</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="bill-info">
-                    <div class="customer-details">
-                        <div class="title">
-                            customer details
-                        </div>
-                        <div>Email: 
-                            <span>youremail@yourdomain.com</span>
-                        </div>
-                        <div>Phone:
-                            <span>+123 456 7890</span>
-                        </div>
-                    </div>
-                    <div class="billing-address">
-                        <div class="title">
-                            billing address
-                        </div>
-                        <div>Mr.A</div>
-                        <div>1234 ABC Street</div>
-                        <div>DEF City</div>
-                        <div>123456</div>
-                        <div>Country X</div>
-                    </div>
-                    <div class="shipping-address">
-                        <div class="title">
-                            billing address
-                        </div>
-                        <div>Mr.A</div>
-                        <div>1234 ABC Street</div>
-                        <div>DEF City</div>
-                        <div>123456</div>
-                        <div>Country X</div>
-                    </div>
+                <div class="nav-btns noselect">
+                    <div class="prevBtn"><i class="fas fa-chevron-left"></i>PREVIOUS STEP</div>
+                    <div class="nextBtn"><i class="fas fa-file-invoice-dollar"></i>NEXT STEP</div>
                 </div>
             </div>
         </div>
@@ -514,11 +509,11 @@
             </div>
         </footer>
         <!-- end footer -->
-        <button class="scroll-up-btn" onclick="document.getElementById('on-top').scrollIntoView({behavior: 'smooth'})"
-           ><i class="fas fa-chevron-up"></i></button>
+        <button class="scroll-up-btn"
+            onclick="document.getElementById('on-top').scrollIntoView({behavior: 'smooth'})"><i
+                class="fas fa-chevron-up"></i></button>
     </div>
     <script src="/js/common.js"></script>
-    <script src="/js/shop_checkout_confirm.js"></script>
 </body>
 
 </html>

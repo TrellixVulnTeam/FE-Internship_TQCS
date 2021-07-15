@@ -1,6 +1,5 @@
 @import 'variables';
 @import 'root';
-@use "scss/shop_main_page";
 
 // overwrite header
 header {
@@ -73,11 +72,8 @@ header {
         margin: 0 auto;
         padding-top: 110px;
         margin-bottom: 100px;
-        // font-size: 1.6rem;
-        // @include sourceSansPro-regular;
         &-content {
             width: 75%;
-            margin-right: 40px;
             .product-tabs {
                 .product-tab {
                     .product-more-info {
@@ -269,7 +265,7 @@ header {
         }
     }
     .more {
-        margin-top: 110px;
+        padding: 110px 20px 0 20px;
         display: flex;
         &-content {
             width: 75%;
@@ -339,9 +335,11 @@ header {
                         transition: 1s;
                         background-color: #dfe5e8;
                         &-maxim {
+                            overflow: hidden;
+                            height: 340px;
                             padding: 60px 32px;
                             background-image: url('/img/background-testimonial-maxim.png');
-                            background-size: 100% 340px;
+                            background-size: 100% 100%;
                             background-repeat: no-repeat;
                             @include sourceSansPro-light;
                             font-size: 2.4rem;
@@ -409,13 +407,13 @@ header {
 }
 
 // overwrite
-footer {
-    .slogan {
+footer{
+    .slogan{
         background-color: #46485c;
         display: flex;
         justify-content: center;
         align-items: center;
-        .line {
+        .line{
             height: 3px;
             flex: 1;
             border: {
@@ -423,30 +421,45 @@ footer {
                 bottom: 2px solid #617180;
             }
         }
-        .btn {
-            height: 80px;
-            padding: 0 58px;
-            box-sizing: border-box;
-            font-size: 2.4rem;
-            text-transform: uppercase;
-            @include montserrat-light;
+        &-content{
+            width: fit-content;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            i {
-                margin-right: 24px;
-                font-size: 4.8rem;
+            justify-content: space-around ;
+            .btn{
+                height: 80px;
+                width: 300px;
+                margin: 10px;
+                box-sizing: border-box;
+                font-size: 2.4rem;
+                text-transform: uppercase;
+                @include montserrat-light;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                i{
+                    margin-right: 24px;
+                    font-size: 4.8rem;
+                }
+            }
+            .slogan-btn1{
+                color: #00ffff;
+                border: 1px solid  #00ffff;                
+            }
+            .slogan-btn2{
+                color: #ffa749;
+                border: 1px solid  #ffa749;
             }
         }
-        .slogan-btn1 {
-            color: #00ffff;
-            border: 1px solid #00ffff;
-            margin: 0 40px;
-        }
-        .slogan-btn2 {
-            color: #ffa749;
-            border: 1px solid #ffa749;
-            margin-right: 40px;
+    }
+}
+
+
+@media (max-width: 991.98px) {
+    .more {
+        &-content {
+            .product-tabs {
+                padding-left: 0 !important;
+            }
         }
     }
 }

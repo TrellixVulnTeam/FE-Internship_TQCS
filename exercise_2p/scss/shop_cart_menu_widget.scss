@@ -2,6 +2,7 @@
 @import 'root';
 
 .cart-menu-widgets {
+    margin-top: 200px;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -131,11 +132,7 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    font: {
-                        family: $font-monsterrat;
-                        weight: bold;
-                        size: 1.4rem;
-                    }
+                    @include montserrat2(bold, 1.4rem);
                     &:hover{
                         opacity: 0.7;
                     }
@@ -206,11 +203,7 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    font: {
-                        family: $font-monsterrat;
-                        weight: bold;
-                        size: 1.4rem;
-                    }
+                    @include montserrat2(bold, 1.4rem);
                     &:hover{
                         opacity: 0.7;
                     }
@@ -227,3 +220,5 @@
         }
     }
 }
+
+

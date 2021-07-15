@@ -1,11 +1,12 @@
 @import 'variables';
 @import 'root';
-@use "scss/shop_main_page";
 
 // overwrite header
 header {
     .slider {
         background-color: #4a4f60;
+        height: auto;
+        padding: 20px 20px 80px 20px;
         &-content {
             height: 100%;
             padding-top: 70px;
@@ -40,6 +41,7 @@ header {
             }
             &-sub-title {
                 font-size: 2.4rem;
+                line-height: 3rem;
                 @include sourceSansPro-light;
             }
         }
@@ -72,13 +74,11 @@ header {
         width: 100%;
         display: flex;
         margin: 0 auto;
-        padding-top: 110px;
+        padding: 110px 20px 0 20px;
         margin-bottom: 100px;
-        // font-size: 1.6rem;
-        // @include sourceSansPro-regular;
         &-content {
             width: 100%;
-            margin-right: 40px;
+            // margin-right: 40px;
             .product {
                 &-briefing {
                     &-left {
@@ -382,7 +382,7 @@ header {
                             border: none;
                             &-symbol {
                                 margin-bottom: 40px;
-                                i{
+                                i {
                                     color: #3c3950 !important;
                                 }
                             }
@@ -478,20 +478,28 @@ header {
             }
         }
     }
-    // overwrite 
+    // overwrite
     .slider {
         width: 100vw;
         height: 500px;
         overflow: unset;
         margin-top: 120px;
+        position: relative;
+        overflow: hidden;
         .slides {
             height: 100%;
+            width: 300%;
+            display: flex;
             .slide {
                 height: 100%;
+                width: calc(100% / 3);
                 transition: 1s;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
                 .slide-title {
                     max-width: 900px;
-                    padding-bottom: 80px;
                     align-items: center;
                     justify-content: space-between;
                     position: relative;
@@ -500,19 +508,19 @@ header {
                     font-size: 3.6rem;
                     color: #3c3950;
                     text-transform: uppercase;
-                    .author{
+                    .author {
                         margin-top: 40px;
-                        span.author-name{
+                        span.author-name {
                             @include montserrat-bold;
                             font-size: 1.6rem;
                             color: #ffc107;
                             text-transform: uppercase;
                         }
-                        span.author-job{
+                        span.author-job {
                             @include sourceSansPro-regular;
                             font-size: 1.4rem;
                             color: #99a9b5;
-                            text-transform: capitalize
+                            text-transform: capitalize;
                         }
                     }
                     .text {
@@ -520,9 +528,9 @@ header {
                         @include sourceSansPro-light;
                         font-size: 2.4rem;
                         color: #5f727f;
-                        text-transform: none
+                        text-transform: none;
                     }
-                    i{
+                    i {
                         margin-top: 40px;
                         font-size: 8rem;
                         color: #ffd75e;
@@ -531,7 +539,7 @@ header {
                 }
             }
         }
-    
+
         .sub-navigation {
             position: absolute;
             bottom: 20px;
@@ -543,17 +551,17 @@ header {
                 weight: 400;
                 size: 16px;
             }
-            a{
+            a {
                 display: block;
             }
             .nav-home {
                 color: #00bcd4;
             }
-    
+
             .nav-first-level {
                 color: #ffffff;
             }
-            .mark-level{
+            .mark-level {
                 position: relative;
                 &::after {
                     content: '';
@@ -592,7 +600,7 @@ header {
         .right-btn {
             right: 0;
         }
-    
+
         .left-btn {
             left: 0;
         }
@@ -603,35 +611,46 @@ header {
 footer {
     .slogan {
         background-color: #46485c;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .btn {
-            height: 80px;
-            padding: 0 58px;
-            box-sizing: border-box;
-            border-radius:40px;
-            font-size: 2.4rem;
-            text-transform: uppercase;
-            @include montserrat-bold;
-            display: flex;
-            justify-content: center;
+        &-content {
+            justify-content: space-around;
             align-items: center;
-            i {
-                margin-right: 24px;
-                font-size: 4.8rem;
+            .btn {
+                height: 80px;
+                padding: 0 58px;
+                box-sizing: border-box;
+                border-radius: 40px;
+                font-size: 2.4rem;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+                @include montserrat-bold;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                i {
+                    margin-right: 24px;
+                    font-size: 4.8rem;
+                }
+            }
+            .slogan-btn1 {
+                color: #46485c;
+                background-color: #ffd740;
+            }
+            .slogan-btn2 {
+                color: #ffd740;
+                background-color: #46485c;
+                border: 4px solid #ffd740;
             }
         }
-        .slogan-btn1 {
-            color: #46485c;
-            background-color: #ffd740;
-            margin: 0 40px;
-        }
-        .slogan-btn2 {
-            color: #ffd740;
-            background-color: #46485c;
-            border: 4px solid #ffd740;
-            margin-right: 40px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .more {
+        &-content {
+            //  @overwrite
+            .product-tabs {
+                padding-left: 0 !important;
+            }
         }
     }
 }

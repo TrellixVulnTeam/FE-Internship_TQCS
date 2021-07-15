@@ -25,7 +25,8 @@
     <div class="app ">
         <!-- start header -->
         <header>
-            <div class="header-top" id="on-top">
+            <div id="on-top"></div>
+            <div class="header-top">
                 <nav class="header-contacts">
                     <div class="header-contacts-number"><i class="fas fa-headphones"></i>+1916-85-2235</div>
                     <ul class="header-contacts-socials">
@@ -47,10 +48,76 @@
                     <a href="#" class="header-contact-wishlist">My Wishlist</a>
                 </nav>
             </div>
-            <div class="header-bottom">
+            <div class="header-bottom sticky">
                 <nav class="header-navbar">
+                    <input type="checkbox" name="cartMobileCheckbox" id="cartMobileCheckbox" class="hidden">
+                    <label for="cartMobileCheckbox" class="cart-mobile-btn hidden">
+                        <i class="fas fa-shopping-cart"></i>
+                    </label>
+                    <label for="cartMobileCheckbox" class="cart-mobile-overlay"></label>
+                    <!-- cart list mobile -->
+                    <div class="cart-mobile-menu ">
+                        <label for="cartMobileCheckbox" class="close-btn">
+                            <i class="fas fa-times"></i>
+                        </label>
+                        <div class="title"><i class="fas fa-shopping-cart"></i>CART</div>
+                        <ul class="cart-list">
+                            <li class="cart-item">
+                                <div class="cart-item-delete-btn noselect" onclick="closeParentBtn(this)"
+                                    title="Click to delete item">X</div>
+                                <a href="#" class="cart-item-link">
+                                    <div class="cart-item-img"></div>
+                                    <div class="cart-item-content">
+                                        <div class="cart-item-content-title percent-tag"> product title here</div>
+                                        <div class="cart-item-content-price">
+                                            <div class="cart-item-amount">1x</div>
+                                            <div class="cart-item-price">$35.00</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="cart-item">
+                                <div class="cart-item-delete-btn noselect" onclick="closeParentBtn(this)"
+                                    title="Click to delete item">X</div>
+                                <a href="#" class="cart-item-link">
+                                    <div class="cart-item-img"></div>
+                                    <div class="cart-item-content">
+                                        <div class="cart-item-content-title percent-tag"> product title here</div>
+                                        <div class="cart-item-content-price">
+                                            <div class="cart-item-amount">1x</div>
+                                            <div class="cart-item-price">$35.00</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="cart-item">
+                                <div class="cart-item-delete-btn noselect" onclick="closeParentBtn(this)"
+                                    title="Click to delete item">X</div>
+                                <a href="#" class="cart-item-link">
+                                    <div class="cart-item-img"></div>
+                                    <div class="cart-item-content">
+                                        <div class="cart-item-content-title percent-tag"> product title here</div>
+                                        <div class="cart-item-content-price">
+                                            <div class="cart-item-amount">1x</div>
+                                            <div class="cart-item-price">$35.00</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="place">
+                            <div class="place-subtotal">
+                                <span>Subtotal</span>
+                                <span>$2589.99</span>
+                            </div>
+                            <div class="place-btn">
+                                <button class="place-btn__view-cart">view cart</button>
+                                <button class="place-btn__checkout">checkout</button>
+                            </div>
+                        </div>
+                    </div>
                     <a href="#" class="header-logo"><img src="/img/logo.webp" alt="logo"></a>
-                    <ul class="main-navigation">
+                    <ul class="navigation">
                         <li><a href="#">HOME</a></li>
                         <li><a href="#">PAGES</a></li>
                         <li><a href="#">BLOG</a></li>
@@ -58,15 +125,45 @@
                         <li><a href="#" class="item-focus">SHOP</a></li>
                         <li><a href="#">FEATURES</a></li>
                         <li><a href="#">ELEMENTS</a></li>
-                    </ul>
-                    <ul class="sub-navigation">
-                        <li><a href="#" class="language"><img src="/img/flag.png" alt=""></a></li>
-                        <li><a href="#"><i class="fas fa-search"></i></a></li>
-                        <li><a href="#" class="cart">
+                        <li class="sub">
+                            <a href="#" class="language"><img src="/img/flag.png" alt=""></a>
+                            <a href="#"><i class="fas fa-search"></i></a>
+                            <a href="#" class="cart">
                                 <i class="fas fa-shopping-cart"></i>
                                 <div>2</div>
-                            </a></li>
+                            </a>
+                        </li>
                     </ul>
+                    <input type="checkbox" name="menuMobile" id="menuMobile" hidden>
+                    <label for="menuMobile" class="primary-menu-mobile-btn hidden"><i class="fas fa-bars"></i></label>
+                    <label for="menuMobile" class="primary-menu-mobile-overlay"></label>
+                    <div class="primary-menu-mobile">
+                        <div class="nav">
+                            <div class="title"> MENU </div>
+                            <label for="menuMobile" class="close-btn">
+                                <i class="fas fa-times"></i>
+                            </label>
+                            <a href="#" class="item"> HOME </a>
+                            <a href="#" class="item"> PAGES </a>
+                            <a href="#" class="item"> BLOGS </a>
+                            <a href="#" class="item"> PORTFOLIUS </a>
+                            <a href="#" class="item"> SHOP </a>
+                            <a href="#" class="item"> FEATURE </a>
+                            <a href="#" class="item"> ELEMENT </a>
+                        </div>
+                        <div class="contact">
+                            <div class="contact-btn noselect" onclick="showNextSiblingElement(this)"> More <i
+                                    class="fas fa-chevron-right"></i>
+                            </div>
+                            <div class="contact-list hidden">
+                                <a href="#"><i class="fas fa-chevron-right"></i> My Account</a>
+                                <a href="#"><i class="fas fa-chevron-right"></i> FAQ</a>
+                                <a href="#"><i class="fas fa-chevron-right"></i> Contact Us</a>
+                                <a href="#"><i class="fas fa-chevron-right"></i> Newsletter Sigup</a>
+                                <a href="#"><i class="fas fa-chevron-right"></i> Shipping Terms</a>
+                            </div>
+                        </div>
+                    </div>
                 </nav>
             </div>
             <div class="slider">
@@ -895,208 +992,203 @@
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    <!-- end container -->
-    <!-- start footer -->
-    <footer>
-        <div class="footer-widgets">
-            <div class="footer-widgets-content">
-                <div class="footer-column">
-                    <div class="footer-column-item">
-                        <div class="footer-column-item-title">
-                            <img src="/img/logo-stroke.png" alt="" class="footer-column-item-title-img">
-                        </div>
-                        <div class="footer-column-item-content"> Lorem ipsum dolor, sit amet consectetur adipisicing
-                            elit. Aut earum officiis officia, dolorum porro optio voluptatem odio, sed omnis soluta ut
-                            enim consequatur ipsum possimus explicabo quidem at quis ratione! </div>
-                    </div>
-                    <div class="footer-column-item">
-                        <div class="footer-column-item-title">
-                            <span>contact</span>
-                        </div>
-                        <div class="footer-column-item-content">
-                            <div class="footer-column-item-content-address">
-                                <i class="fas fa-map-marker-alt"></i> Address: <br>908 New Hampshire Avenue NorthWest
-                                <br>#100, Washingtion, DC <br>20037, United States
+        <!-- end container -->
+        <!-- start footer -->
+        <footer>
+            <div class="footer-widgets noselect">
+                <div class="footer-widgets-content">
+                    <div class="footer-column">
+                        <div class="footer-column-item">
+                            <div class="footer-column-item-title">
+                                <img src="/img/logo-stroke.png" alt="" class="footer-column-item-title-img">
                             </div>
-                            <div class="footer-column-item-content-contact">
-                                <i class="fas fa-headphones-alt"></i> Phone: +1 916-875-2235<br>
-                                <i class="far fa-list-alt"></i> Fax: +1 916-875-2235<br>
-                                <i class="far fa-envelope"></i> Email: <span>info@domain.ltd</span><br>
-                                <i class="fas fa-globe"></i> Website: <span>www.codex-themes.com </span>
-                            </div>
+                            <div class="footer-column-item-content"> Lorem Ipsum. Proin gravida nibh vel velit auctor
+                                aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec
+                                sagittis sem. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat
+                                ipsum, nec sagittis sem lorem quis bibendum auctor </div>
                         </div>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <div class="footer-column-item">
-                        <div class="footer-column-item-title"> recent posts </div>
-                        <div class="footer-column-item-content">
-                            <div class="footer-column-item-content-recent-post">
-                                <div class="recent-post-img"></div>
-                                <div class="recent-post-info">
-                                    <span> Proin gravida nibh vel velit autor alite
-                                        aeneanaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa </span>
-                                    <span> 27 Dec 2015 </span>
+                        <div class="footer-column-item">
+                            <div class="footer-column-item-title">
+                                <span>contact</span>
+                            </div>
+                            <div class="footer-column-item-content">
+                                <div class="footer-column-item-content-address">
+                                    <i class="fas fa-map-marker-alt"></i> Address: <br>908 New Hampshire Avenue
+                                    NorthWest <br>#100, Washingtion, DC <br>20037, United States
                                 </div>
-                            </div>
-                            <div class="footer-column-item-content-recent-post">
-                                <div class="recent-post-img"></div>
-                                <div class="recent-post-info">
-                                    <span> Proin gravida nibh vel velit autor alite
-                                        aeneanaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa </span>
-                                    <span> 27 Dec 2015 </span>
-                                </div>
-                            </div>
-                            <div class="footer-column-item-content-recent-post">
-                                <div class="recent-post-img"></div>
-                                <div class="recent-post-info">
-                                    <span> Proin gravida nibh vel velit autor alite
-                                        aeneanaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa </span>
-                                    <span> 27 Dec 2015 </span>
+                                <div class="footer-column-item-content-contact">
+                                    <i class="fas fa-headphones-alt"></i> Phone: +1 916-875-2235<br>
+                                    <i class="far fa-list-alt"></i> Fax: +1 916-875-2235<br>
+                                    <i class="far fa-envelope"></i> Email: <span>info@domain.ltd</span><br>
+                                    <i class="fas fa-globe"></i> Website: <span>www.codex-themes.com </span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="footer-column-item">
-                        <div class="footer-column-item-title"> useful links </div>
-                        <div class="footer-column-item-content">
-                            <ul class="footer-column-item-content-useful-links">
-                                <li>Link 1</li>
-                                <li>Link 2</li>
-                                <li>Link 3</li>
-                                <li>Link 4</li>
-                                <li>Link 5</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <div class="footer-column-item">
-                        <div class="footer-column-item-title"> email us </div>
-                        <div class="footer-column-item-content">
-                            <input type="text" name="clientName" id="input-name" placeholder="Your name">
-                            <input type="email" name="clientEmail" id="input-email" placeholder="Your email">
-                            <textarea name="clientText" id="" cols="30" rows="7 " placeholder="Your message"></textarea>
-                            <button class="footer-column-item-content-send-message-btn">send message</button>
-                        </div>
-                    </div>
-                    <div class="footer-column-item">
-                        <div class="footer-column-item-title"> projects / clients? </div>
-                        <div class="footer-column-item-content projects-clients">
-                            <div class="projects-clients-slides">
-                                <input type="radio" name="pcBtn" id="p-c-radio1">
-                                <input type="radio" name="pcBtn" id="p-c-radio2">
-                                <input type="radio" name="pcBtn" id="p-c-radio3">
-                                <div class="projects-clients-slide projects-clients-slide-first">
-                                    <div class="projects-clients-slide-item"></div>
-                                    <div class="projects-clients-slide-item"></div>
-                                    <div class="projects-clients-slide-item"></div>
-                                    <div class="projects-clients-slide-item"></div>
-                                    <div class="projects-clients-slide-item"></div>
-                                    <div class="projects-clients-slide-item"></div>
+                    <div class="footer-column">
+                        <div class="footer-column-item">
+                            <div class="footer-column-item-title"> recent posts </div>
+                            <div class="footer-column-item-content">
+                                <div class="footer-column-item-content-recent-post">
+                                    <div class="recent-post-img"></div>
+                                    <div class="recent-post-info">
+                                        <span> Proin gravida nibh vel velit autor alite aeneanaaa</span>
+                                        <span> 27 Dec 2015 </span>
+                                    </div>
                                 </div>
-                                <div class="projects-clients-slide">
-                                    <div class="projects-clients-slide-item"></div>
-                                    <div class="projects-clients-slide-item"></div>
-                                    <div class="projects-clients-slide-item"></div>
-                                    <div class="projects-clients-slide-item"></div>
-                                    <div class="projects-clients-slide-item"></div>
-                                    <div class="projects-clients-slide-item"></div>
+                                <div class="footer-column-item-content-recent-post">
+                                    <div class="recent-post-img"></div>
+                                    <div class="recent-post-info">
+                                        <span> Proin gravida nibh vel velit autor alite aeneanaaa </span>
+                                        <span> 27 Dec 2015 </span>
+                                    </div>
                                 </div>
-                                <div class="projects-clients-slide">
-                                    <div class="projects-clients-slide-item"></div>
-                                    <div class="projects-clients-slide-item"></div>
-                                    <div class="projects-clients-slide-item"></div>
-                                    <div class="projects-clients-slide-item"></div>
-                                    <div class="projects-clients-slide-item"></div>
-                                    <div class="projects-clients-slide-item"></div>
-                                </div>
-                                <div class="projects-clients-navigation-auto">
-                                    <div class="projects-clients-navigation-auto-btn1"></div>
-                                    <div class="projects-clients-navigation-auto-btn2"></div>
-                                    <div class="projects-clients-navigation-auto-btn3"></div>
+                                <div class="footer-column-item-content-recent-post">
+                                    <div class="recent-post-img"></div>
+                                    <div class="recent-post-info">
+                                        <span> Proin gravida nibh vel velit autor alite Lorem, ipsum dolor. </span>
+                                        <span> 27 Dec 2015 </span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="projects-clients-navigation-manual">
-                                <label for="p-c-radio1" class="projects-clients-navigation-manual-btn"></label>
-                                <label for="p-c-radio2" class="projects-clients-navigation-manual-btn"></label>
-                                <label for="p-c-radio3" class="projects-clients-navigation-manual-btn"></label>
+                        </div>
+                        <div class="footer-column-item">
+                            <div class="footer-column-item-title"> useful links </div>
+                            <div class="footer-column-item-content">
+                                <ul class="footer-column-item-content-useful-links">
+                                    <li>Link 1</li>
+                                    <li>Link 2</li>
+                                    <li>Link 3</li>
+                                    <li>Link 4</li>
+                                    <li>Link 5</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="footer-column">
-                    <div class="footer-column-item">
-                        <div class="footer-column-item-title"> flickr feed </div>
-                        <div class="footer-column-item-content flickr-feed">
-                            <div class="flickr-feed-item"></div>
-                            <div class="flickr-feed-item"></div>
-                            <div class="flickr-feed-item"></div>
-                            <div class="flickr-feed-item"></div>
-                            <div class="flickr-feed-item"></div>
-                            <div class="flickr-feed-item"></div>
-                            <div class="flickr-feed-item"></div>
-                            <div class="flickr-feed-item"></div>
-                            <div class="flickr-feed-item"></div>
+                    <div class="footer-column">
+                        <div class="footer-column-item">
+                            <div class="footer-column-item-title"> email us </div>
+                            <div class="footer-column-item-content">
+                                <input type="text" name="clientName" id="input-name" placeholder="Your name">
+                                <input type="email" name="clientEmail" id="input-email" placeholder="Your email">
+                                <textarea name="clientText" id="" cols="30" rows="7 "
+                                    placeholder="Your message"></textarea>
+                                <button class="footer-column-item-content-send-message-btn">send message</button>
+                            </div>
+                        </div>
+                        <div class="footer-column-item">
+                            <div class="footer-column-item-title"> projects / clients? </div>
+                            <div class="footer-column-item-content projects-clients">
+                                <div class="projects-clients-slides">
+                                    <input type="radio" name="pcBtn" id="p-c-radio1">
+                                    <input type="radio" name="pcBtn" id="p-c-radio2">
+                                    <input type="radio" name="pcBtn" id="p-c-radio3">
+                                    <div class="projects-clients-slide projects-clients-slide-first">
+                                        <div class="projects-clients-slide-item"></div>
+                                        <div class="projects-clients-slide-item"></div>
+                                        <div class="projects-clients-slide-item"></div>
+                                        <div class="projects-clients-slide-item"></div>
+                                        <div class="projects-clients-slide-item"></div>
+                                        <div class="projects-clients-slide-item"></div>
+                                    </div>
+                                    <div class="projects-clients-slide">
+                                        <div class="projects-clients-slide-item"></div>
+                                        <div class="projects-clients-slide-item"></div>
+                                        <div class="projects-clients-slide-item"></div>
+                                        <div class="projects-clients-slide-item"></div>
+                                        <div class="projects-clients-slide-item"></div>
+                                        <div class="projects-clients-slide-item"></div>
+                                    </div>
+                                    <div class="projects-clients-slide">
+                                        <div class="projects-clients-slide-item"></div>
+                                        <div class="projects-clients-slide-item"></div>
+                                        <div class="projects-clients-slide-item"></div>
+                                        <div class="projects-clients-slide-item"></div>
+                                        <div class="projects-clients-slide-item"></div>
+                                        <div class="projects-clients-slide-item"></div>
+                                    </div>
+                                    <div class="projects-clients-navigation-auto">
+                                        <div class="projects-clients-navigation-auto-btn1"></div>
+                                        <div class="projects-clients-navigation-auto-btn2"></div>
+                                        <div class="projects-clients-navigation-auto-btn3"></div>
+                                    </div>
+                                </div>
+                                <div class="projects-clients-navigation-manual">
+                                    <label for="p-c-radio1" class="projects-clients-navigation-manual-btn"></label>
+                                    <label for="p-c-radio2" class="projects-clients-navigation-manual-btn"></label>
+                                    <label for="p-c-radio3" class="projects-clients-navigation-manual-btn"></label>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="footer-column-item">
-                        <div class="footer-column-item-title"> newsletters </div>
-                        <div class="footer-column-item-content newsletters">
-                            <span>Subscribe to our MailChimp newsletter and stay up to date with all events coming
-                                straight in your mailbox:</span>
-                            <div class="newsletters-input">
-                                <input type="email" name="clientEmail" id="clientEmail"
-                                    placeholder="Your email address">
-                                <button><i class="fas fa-chevron-right"></i></button>
+                    <div class="footer-column">
+                        <div class="footer-column-item">
+                            <div class="footer-column-item-title"> flickr feed </div>
+                            <div class="footer-column-item-content flickr-feed">
+                                <div class="flickr-feed-item"></div>
+                                <div class="flickr-feed-item"></div>
+                                <div class="flickr-feed-item"></div>
+                                <div class="flickr-feed-item"></div>
+                                <div class="flickr-feed-item"></div>
+                                <div class="flickr-feed-item"></div>
+                                <div class="flickr-feed-item"></div>
+                                <div class="flickr-feed-item"></div>
+                                <div class="flickr-feed-item"></div>
                             </div>
-                            <span><i class="fas fa-star "></i>Personal information will be encrypted</span>
+                        </div>
+                        <div class="footer-column-item">
+                            <div class="footer-column-item-title"> newsletters </div>
+                            <div class="footer-column-item-content newsletters">
+                                <span>Subscribe to our MailChimp newsletter and stay up to date with all events coming
+                                    straight in your mailbox:</span>
+                                <div class="newsletters-input">
+                                    <input type="email" name="clientEmail" id="clientEmail"
+                                        placeholder="Your email address">
+                                    <button><i class="fas fa-chevron-right"></i></button>
+                                </div>
+                                <span><i class="fas fa-star "></i>Personal information will be encrypted</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-menu-socials">
-            <div class="footer-menu-socials-content">
-                <div class="footer-copyright">
-                    <i class="far fa-copyright"></i> Copyright 2015&#160 <a href="#">CodexThemes</a>
-                </div>
-                <div class="footer-menu">
-                    <a href="" class="footer-menu-support-link">Supoort</a>
-                    <a href="" class="footer-menu-contact-us-link">Cntact Us</a>
-                    <a href="" class="footer-menu-disclaimer">Disclaimer</a>
-                    <a href="" class="footer-menu-privacy-policy">Privacy Policy</a>
-                </div>
-                <div class="footer-socials">
-                    <a href="#" class="twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="facebook">
-                        <i class="fab fa-facebook-f facebook"></i>
-                    </a>
-                    <a href="#" class="linkedin">
-                        <i class="fab fa-linkedin-in "></i>
-                    </a>
-                    <a href="#" class="instagram">
-                        <i class="fab fa-instagram "></i>
-                    </a>
-                    <a href="#" class="youtube">
-                        <i class="fab fa-youtube "></i>
-                    </a>
-                    <a href="#" class="printest">
-                        <i class="fab fa-pinterest-p "></i>
-                    </a>
+            <div class="footer-menu-socials noselect">
+                <div class="footer-menu-socials-content">
+                    <div class="footer-copyright">
+                        <i class="far fa-copyright"></i> Copyright 2015&#160 <a href="#">CodexThemes</a>
+                    </div>
+                    <div class="footer-menu">
+                        <a href="" class="footer-menu-support-link">Supoort</a>
+                        <a href="" class="footer-menu-contact-us-link">Cntact Us</a>
+                        <a href="" class="footer-menu-disclaimer">Disclaimer</a>
+                        <a href="" class="footer-menu-privacy-policy">Privacy Policy</a>
+                    </div>
+                    <div class="footer-socials">
+                        <a href="#" class="twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="facebook">
+                            <i class="fab fa-facebook-f facebook"></i>
+                        </a>
+                        <a href="#" class="linkedin">
+                            <i class="fab fa-linkedin-in "></i>
+                        </a>
+                        <a href="#" class="instagram">
+                            <i class="fab fa-instagram "></i>
+                        </a>
+                        <a href="#" class="youtube">
+                            <i class="fab fa-youtube "></i>
+                        </a>
+                        <a href="#" class="printest">
+                            <i class="fab fa-pinterest-p "></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
-    <!-- end footer -->
-    <butotn class="scroll-up-btn" onclick="document.getElementById('on-top').scrollIntoView({behavior: 'smooth'})"
-        style="position: fixed; bottom: 72px; left: calc(100% - 142px); height: 50px; width: 50px; display: flex; 
-        justify-content: center; align-items: center;border-radius: 5px; background-color: #161723;opacity: 0.6; 
-        color: #58606c; font-size: 2.4rem"><i class="fas fa-chevron-up"></i></butotn>
+        </footer>
+        <!-- end footer -->
+        <button class="scroll-up-btn" onclick="document.getElementById('on-top').scrollIntoView({behavior: 'smooth'})"
+           ><i class="fas fa-chevron-up"></i></button>
     </div>
     <script src="/js/common.js"></script>
     <script src="/js/shop_product_detail_fullwidth2.js"></script>

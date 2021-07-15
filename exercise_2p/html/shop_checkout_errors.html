@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHOP_CHECKOUT_CONFIRM</title>
+    <title>SHOP_CHECKOUT_ERRORS</title>
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/shop_checkout_confirm.css">
+    <link rel="stylesheet" href="/css/shop_checkout_errors.css">
     <link rel="stylesheet" href="/font/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -191,130 +191,53 @@
         <!-- start container -->
         <div class="container">
             <div class="main grid">
-                <div class="noti">
+                <div class="noti error">
                     <div class="icon">
-                        <i class="ti-check"></i>
+                        <i class="fas fa-exclamation-triangle"></i>
                     </div>
-                    Thank you. Your order has been received.
+                    <span class="error-name"> error: </span> Invalid username.&#160 <a href="#" class="error-suggest"> Lost
+                        your password? </a>
                     <div class="close-btn" onclick="closeParentBtn(this)">
                         <i class="ti-close"></i>
                     </div>
                 </div>
-                <div class="checkout-info">
-                    <div class="checkout-info-item">
-                        <i class="ti-check-box"></i>
-                        Order: 
-                        <span>11463</span>
+                <div class="noti warning">
+                    <div class="icon">
+                        <i class="fas fa-exclamation-circle"></i>
                     </div>
-                    <div class="checkout-info-item">
-                        <i class="ti-check-box"></i>
-                        Date: 
-                        <span>July 9, 2021</span>
-                    </div>
-                    <div class="checkout-info-item">
-                        <i class="ti-check-box"></i>
-                        Total: 
-                        <span>$99.99</span>
-                    </div>
-                    <div class="checkout-info-item">
-                        <i class="ti-check-box"></i>
-                        Payment method: 
-                        <span>Cash on Dlivery</span>
-                    </div>
-                    <div>Pay with cast upon  delivery.</div>
-                </div>
-                <div class="order-info">
-                    <div class="order-detail">
-                        <div class="title">order details</div>
-                        <div class="order-detail-table">
-                            <table>
-                                <tr>
-                                    <th>product</th>
-                                    <th>quantity</th>
-                                    <th>total</th>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="product-img"></div>
-                                        <div class="product-summary">Lorem ipsum dolor sit amet consectetur.</div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>$35.99</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="product-img"></div>
-                                        <div class="product-summary">Lorem ipsum dolor sit amet consectetur.</div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>$35.99</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="product-img"></div>
-                                        <div class="product-summary">Lorem ipsum dolor sit amet consectetur.</div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>$35.99</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="cart-totals">
-                        <div class="title">cart <i class="fas fa-tachometer-alt-slow    "></i></div>
-                        <div class="cart-totals-table">
-                            <table>
-                                <tr>
-                                    <td>Sabtotal</td>
-                                    <td>$99.99</td>
-                                </tr>
-                                <tr>
-                                    <td>Shipping</td>
-                                    <td>Free Shipping</td>
-                                </tr>
-                                <tr>
-                                    <td>Payment Method</td>
-                                    <td>Cash on Delivery</td>
-                                </tr>
-                                <tr>
-                                    <td>Total</td>
-                                    <td class="total">$99.99</td>
-                                </tr>
-                            </table>
-                        </div>
+                    <span class="error-name"> phone: </span> is a required field.
+                    <div class="close-btn" onclick="closeParentBtn(this)">
+                        <i class="ti-close"></i>
                     </div>
                 </div>
-                <div class="bill-info">
-                    <div class="customer-details">
-                        <div class="title">
-                            customer details
+                <div class="steps noselect">
+                    <div class="step onStep">1. sign in</div>
+                    <div class="step">2. billing</div>
+                    <div class="step">3. payment</div>
+                    <div class="step">4. confirmation</div>
+                </div>
+                <div class="form-login">
+                    <div class="exist-customer">
+                        <div class="title"><i class="fas fa-key"></i>existing customer</div>
+                        <div class="login-input">
+                            Username or email <span>*</span>
+                            <input type="email" name="username" id="usernameLogin">
+                            Password<span>*</span>
+                            <input type="password" name="password" id="passwordLogin">
                         </div>
-                        <div>Email: 
-                            <span>youremail@yourdomain.com</span>
-                        </div>
-                        <div>Phone:
-                            <span>+123 456 7890</span>
+                        <div class="login-btns">
+                            <div class="login-enter">LOGIN</div>
+                            <input type="checkbox" name="rememberMe" id="rememberMe">
+                            Remember me
+                            <div class="lostPassword">
+                                <a href="#" class="lostPassword-link">Lost your password?</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="billing-address">
-                        <div class="title">
-                            billing address
-                        </div>
-                        <div>Mr.A</div>
-                        <div>1234 ABC Street</div>
-                        <div>DEF City</div>
-                        <div>123456</div>
-                        <div>Country X</div>
-                    </div>
-                    <div class="shipping-address">
-                        <div class="title">
-                            billing address
-                        </div>
-                        <div>Mr.A</div>
-                        <div>1234 ABC Street</div>
-                        <div>DEF City</div>
-                        <div>123456</div>
-                        <div>Country X</div>
+                    <div class="new-customer noselect">
+                        <div class="title"><i class="fas fa-id-badge"></i>new customer</div>
+                        <div class="login-guest btn">checkout as guest</div>
+                        <div class="create-account btn">create an  account</div>
                     </div>
                 </div>
             </div>
@@ -359,21 +282,24 @@
                                 <div class="footer-column-item-content-recent-post">
                                     <div class="recent-post-img"></div>
                                     <div class="recent-post-info">
-                                        <span> Proin gravida nibh vel velit autor alite aeneanaaa</span>
+                                        <span> Proin gravida nibh vel velit autor alite
+                                            aeneanaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa </span>
                                         <span> 27 Dec 2015 </span>
                                     </div>
                                 </div>
                                 <div class="footer-column-item-content-recent-post">
                                     <div class="recent-post-img"></div>
                                     <div class="recent-post-info">
-                                        <span> Proin gravida nibh vel velit autor alite aeneanaaa </span>
+                                        <span> Proin gravida nibh vel velit autor alite
+                                            aeneanaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa </span>
                                         <span> 27 Dec 2015 </span>
                                     </div>
                                 </div>
                                 <div class="footer-column-item-content-recent-post">
                                     <div class="recent-post-img"></div>
                                     <div class="recent-post-info">
-                                        <span> Proin gravida nibh vel velit autor alite Lorem, ipsum dolor. </span>
+                                        <span> Proin gravida nibh vel velit autor alite
+                                            aeneanaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa </span>
                                         <span> 27 Dec 2015 </span>
                                     </div>
                                 </div>
@@ -518,7 +444,6 @@
            ><i class="fas fa-chevron-up"></i></button>
     </div>
     <script src="/js/common.js"></script>
-    <script src="/js/shop_checkout_confirm.js"></script>
 </body>
 
 </html>

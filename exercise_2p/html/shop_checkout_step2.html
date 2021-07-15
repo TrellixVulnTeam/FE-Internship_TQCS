@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHOP_CHECKOUT_CONFIRM</title>
+    <title>SHOP_CHECKOUT_STEP2</title>
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/shop_checkout_confirm.css">
+    <link rel="stylesheet" href="/css/shop_checkout_step2.css">
     <link rel="stylesheet" href="/font/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -191,131 +191,55 @@
         <!-- start container -->
         <div class="container">
             <div class="main grid">
-                <div class="noti">
-                    <div class="icon">
-                        <i class="ti-check"></i>
+                <div class="steps noselect">
+                    <div class="step">1. sign in</div>
+                    <div class="step onStep">2. billing</div>
+                    <div class="step">3. payment</div>
+                    <div class="step">4. confirmation</div>
+                </div>
+                <div class="bill-form">
+                    <div class="bill-address">
+                        <div class="title"><i class="fas fa-truck"></i>billing address</div> Country <span>*</span>
+                        <input type="text" name="country" id="country">
+                        <div class="fullName">
+                            <div class="first-name"> First Name <span>*</span>
+                                <input type="text" name="firstName" id="firstName">
+                            </div>
+                            <div class="last-name"> Last Name <span>*</span>
+                                <input type="text" name="lastName" id="lastName">
+                            </div>
+                        </div> Company Name <span>*</span>
+                        <input type="text" name="companyName" id="companyName"> Address <span>*</span>
+                        <input type="text" name="streetAddress" id="streetAddress" placeholder="Street Address">
+                        <input type="text" name="optionalAddress" id="optionalAddress"
+                            placeholder="Apartment, suite, unit etc. (optional)"> Town / City <span>*</span>
+                        <input type="text" name="cityAddress" id="cityAddress">
+                        <div class="short-input">
+                            <div> State / Country <span>*</span>
+                                <input type="text" name="stateAddress" id="stateAddress">
+                            </div>
+                            <div> Postcode / Zip <span>*</span>
+                                <input type="text" name="codeAddress" id="codeAddress">
+                            </div>
+                            <div> Email Address <span>*</span>
+                                <input type="text" name="emailAddress" id="emailAddress">
+                            </div>
+                            <div> Phone <span>*</span>
+                                <input type="text" name="phoneNumber" id="phoneNumber">
+                            </div>
+                        </div>
                     </div>
-                    Thank you. Your order has been received.
-                    <div class="close-btn" onclick="closeParentBtn(this)">
-                        <i class="ti-close"></i>
+                    <div class="different-address">
+                        <div class="title"><i class="fas fa-globe-americas"></i>diffirent address</div>
+                        <div class="snip-address">
+                            <input type="checkbox" name="snipAddress" id="snipAddress"> Snip to a diffirent address?
+                        </div> Order Notes <textarea name="snipAddressNote" id="snipAddressNote" cols="30" rows="0"
+                            placeholder="Notes about your order, e.g. special notess for delivery"></textarea>
                     </div>
                 </div>
-                <div class="checkout-info">
-                    <div class="checkout-info-item">
-                        <i class="ti-check-box"></i>
-                        Order: 
-                        <span>11463</span>
-                    </div>
-                    <div class="checkout-info-item">
-                        <i class="ti-check-box"></i>
-                        Date: 
-                        <span>July 9, 2021</span>
-                    </div>
-                    <div class="checkout-info-item">
-                        <i class="ti-check-box"></i>
-                        Total: 
-                        <span>$99.99</span>
-                    </div>
-                    <div class="checkout-info-item">
-                        <i class="ti-check-box"></i>
-                        Payment method: 
-                        <span>Cash on Dlivery</span>
-                    </div>
-                    <div>Pay with cast upon  delivery.</div>
-                </div>
-                <div class="order-info">
-                    <div class="order-detail">
-                        <div class="title">order details</div>
-                        <div class="order-detail-table">
-                            <table>
-                                <tr>
-                                    <th>product</th>
-                                    <th>quantity</th>
-                                    <th>total</th>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="product-img"></div>
-                                        <div class="product-summary">Lorem ipsum dolor sit amet consectetur.</div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>$35.99</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="product-img"></div>
-                                        <div class="product-summary">Lorem ipsum dolor sit amet consectetur.</div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>$35.99</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="product-img"></div>
-                                        <div class="product-summary">Lorem ipsum dolor sit amet consectetur.</div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>$35.99</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="cart-totals">
-                        <div class="title">cart <i class="fas fa-tachometer-alt-slow    "></i></div>
-                        <div class="cart-totals-table">
-                            <table>
-                                <tr>
-                                    <td>Sabtotal</td>
-                                    <td>$99.99</td>
-                                </tr>
-                                <tr>
-                                    <td>Shipping</td>
-                                    <td>Free Shipping</td>
-                                </tr>
-                                <tr>
-                                    <td>Payment Method</td>
-                                    <td>Cash on Delivery</td>
-                                </tr>
-                                <tr>
-                                    <td>Total</td>
-                                    <td class="total">$99.99</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="bill-info">
-                    <div class="customer-details">
-                        <div class="title">
-                            customer details
-                        </div>
-                        <div>Email: 
-                            <span>youremail@yourdomain.com</span>
-                        </div>
-                        <div>Phone:
-                            <span>+123 456 7890</span>
-                        </div>
-                    </div>
-                    <div class="billing-address">
-                        <div class="title">
-                            billing address
-                        </div>
-                        <div>Mr.A</div>
-                        <div>1234 ABC Street</div>
-                        <div>DEF City</div>
-                        <div>123456</div>
-                        <div>Country X</div>
-                    </div>
-                    <div class="shipping-address">
-                        <div class="title">
-                            billing address
-                        </div>
-                        <div>Mr.A</div>
-                        <div>1234 ABC Street</div>
-                        <div>DEF City</div>
-                        <div>123456</div>
-                        <div>Country X</div>
-                    </div>
+                <div class="nav-btns noselect">
+                    <div class="prevBtn"><i class="fas fa-chevron-left"></i>PREVIOUS STEP</div>
+                    <div class="nextBtn">NEXT STEP <i class="fas fa-chevron-right"></i></div>
                 </div>
             </div>
         </div>
@@ -518,7 +442,6 @@
            ><i class="fas fa-chevron-up"></i></button>
     </div>
     <script src="/js/common.js"></script>
-    <script src="/js/shop_checkout_confirm.js"></script>
 </body>
 
 </html>

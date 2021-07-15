@@ -1,5 +1,6 @@
 @import 'variables';
 @import 'root';
+
 .container {
     width: 100vw;
     .main {
@@ -75,7 +76,7 @@
                                         border-top: 1px solid #00bcd4;
                                         color: #5f727f;
                                         font-size: 1.4rem;
-                                        @include montserrat-regular
+                                        @include montserrat-regular;
                                     }
                                     &:hover {
                                         background-color: #393d50;
@@ -91,32 +92,35 @@
                         }
                     }
                 }
-
-                .classify-next-page-btn,
-                .classify-pre-page-btn {
-                    width: 30px;
-                    height: 30px;
-                    border: 1px solid $border-color-grey;
-                    border-radius: 2px;
+                .btns {
+                    width: 80px;
                     position: absolute;
                     bottom: 0;
+                    left: calc(50% - 40px);
                     display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    i {
-                        color: #aaaaaa;
+                    justify-content: space-between;
+                    .classify-next-page-btn,
+                    .classify-pre-page-btn {
+                        width: 30px;
+                        height: 30px;
+                        border: 1px solid $border-color-grey;
+                        border-radius: 2px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        i {
+                            color: #aaaaaa;
+                        }
                     }
-                }
-                .classify-pre-page-btn {
-                    left: 45%;
-                }
-                .classify-next-page-btn {
-                    left: 55%;
-                }
-                .classify-pre-page-btn:hover,
-                .classify-next-page-btn:hover {
-                    cursor: pointer;
-                    background-color: #3c3950;
+                    .classify-pre-page-btn {
+                    }
+                    .classify-next-page-btn {
+                    }
+                    .classify-pre-page-btn:hover,
+                    .classify-next-page-btn:hover {
+                        cursor: pointer;
+                        background-color: #3c3950;
+                    }
                 }
             }
             .products {
@@ -272,7 +276,6 @@
                             margin-right: 40px;
                         }
                         &-img {
-                            width: 262px;
                             height: 326px;
                             background: {
                                 image: url('/img/product2.jpg');
@@ -372,15 +375,17 @@
                     }
                 }
                 &-change-pages {
-                    margin-top: 20px;
+                    max-width: 440px;
+                    width: 100%;
+                    margin: 20px auto 0 auto;
+                    padding: 0 20px;
                     display: flex;
-                    justify-content: center;
+                    justify-content: space-between;
                     align-items: center;
-                    & * {
+                    & > * {
                         width: 30px;
                         height: 30px;
                         border-radius: 2px;
-                        margin: 0 16px;
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -561,19 +566,14 @@
         &-list {
             width: 100%;
             margin-top: 50px;
-            padding-bottom: 75px;
+            padding-bottom: 40px;
+            padding-left: 40px;
             border-bottom: 1px solid $border-color-grey;
-            margin: 1px;
             display: flex;
             &-item {
                 width: calc((100% - 120px) / 4);
-                // height: 600px;
-                &:nth-child(2) {
-                    margin: 0 20px 0 40px;
-                }
-                &:nth-child(3) {
-                    margin: 0 40px 0 20px;
-                }
+                margin-right: 40px;
+                margin-bottom: 40px;
                 &-img {
                     height: 188px;
                     width: 100%;
@@ -675,7 +675,7 @@
         display: flex;
         .payment {
             width: calc((100% - 40px) / 2);
-            height: 300px;
+            min-height: 300px;
             padding: 56px 120px 56px 56px;
             display: flex;
             flex-direction: column;
@@ -696,6 +696,7 @@
                 margin-bottom: 40px;
                 color: #3c3950;
                 font-size: 2.4rem;
+                line-height: 3rem;
                 @include montserrat-bold;
                 span {
                     display: block;
@@ -714,6 +715,7 @@
                 color: #3c3950;
             }
             &-detail {
+                margin-right: -120pscroll-up-btnx;
                 &-cards {
                     display: flex;
                     flex-wrap: wrap;
@@ -737,7 +739,7 @@
             }
         }
     }
-   
+
     .slogan {
         width: 100vw;
         height: 224px;
@@ -779,4 +781,165 @@
             }
         }
     }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+    .main-content {
+        .classify {
+            #classify-pages {
+                .classify-page {
+                    .classify-item {
+                        width: calc(50% - 10px) !important;
+                        height: 240px !important;
+                        margin-bottom: 20px !important;
+                        &:nth-of-type(3n + 2) {
+                            margin: 0 !important;
+                        }
+                        &:nth-of-type(2n + 1) {
+                            margin-right: 20px !important;
+                        }
+                        &-info {
+                            top: unset !important;
+                            bottom: 0;
+                            left: 0;
+                            .classify-item-link {
+                                background-color: #dfdfdf !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .products {
+            &-nav {
+                display: none !important;
+            }
+            &-list {
+                margin-right: -20px;
+                .products-list-item {
+                    width: calc((100% - 40px) / 2) !important;
+                    &:nth-of-type(3n + 2) {
+                        margin-left: unset !important;
+                    }
+                    margin-top: 20px !important;
+                    margin-right: 20px !important;
+                    &-img {
+                        height: 240px !important;
+                        &-sale-tag {
+                            width: 40px !important;
+                            height: 40px !important;
+                            font-size: 1rem !important;
+                        }
+                        &-new-tag {
+                            width: 30px !important;
+                            height: 30px !important;
+                            font-size: 1rem !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .our-brand {
+        &-content {
+            &-slides {
+                .our-brand-content-slide {
+                    & * {
+                        width: 60px !important;
+                        height: 60px !important;
+                    }
+                }
+                &-navigation-auto {
+                    & * {
+                        width:  24px !important;
+                        height:  24px !important;
+                    }
+                }
+            }
+
+            &-navigation-manual {
+                &-btn {
+                    width:  24px !important;
+                    height:  24px !important;
+                }
+            }
+        }
+    }
+    
+    .payments {
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        .payment {
+            width: 100% !important;
+            &:nth-of-type(2n) {
+                margin-left: 0 !important;
+            }
+        }
+    }
+    
+    .news {
+        &-list {
+            padding-left: 20px !important;
+            display: flex;
+            flex-wrap: wrap;
+            &-item {
+                height: unset !important;
+                width: 50% !important;
+                margin-right: 20px !important;
+                margin-bottom: 20px !important;
+                &-content {
+                    &-contact {
+                        flex-wrap: wrap;
+                        &-icons {
+                           margin-top: 10px;
+                        }
+                    }
+                    &-detail {
+                        display: none;
+                    }
+                    &-viewer {
+                        flex-wrap: wrap;
+                        margin-top: 0 !important;
+                        .viewer-share-btn {
+                            margin-top: 20px;
+                            
+                        }
+                        .viewer-read-more-btn {
+                           margin-top: 20px
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+@media (max-width: 991.98px) {
+    .news {
+        &-list {
+            display: flex;
+            flex-wrap: wrap;
+            &-item {
+                width: calc((100% - 80px) / 2) !important;
+            }
+        }
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
 }

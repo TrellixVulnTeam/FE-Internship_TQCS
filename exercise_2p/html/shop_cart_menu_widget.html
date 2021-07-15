@@ -21,7 +21,9 @@
 <body>
      <!-- start header -->
      <header>
-        <div class="header-top" id="on-top">
+         
+        <div id="on-top"></div>
+        <div class="header-top">
             <nav class="header-contacts">
                 <div class="header-contacts-number"><i class="fas fa-headphones"></i>+1916-85-2235</div>
                 <ul class="header-contacts-socials">
@@ -43,10 +45,76 @@
                 <a href="#" class="header-contact-wishlist">My Wishlist</a>
             </nav>
         </div>
-        <div class="header-bottom">
+        <div class="header-bottom sticky">
             <nav class="header-navbar">
+                <input type="checkbox" name="cartMobileCheckbox" id="cartMobileCheckbox" class="hidden">
+                <label for="cartMobileCheckbox" class="cart-mobile-btn hidden">
+                    <i class="fas fa-shopping-cart"></i>
+                </label>
+                <label for="cartMobileCheckbox" class="cart-mobile-overlay"></label>
+                <!-- cart list mobile -->
+                <div class="cart-mobile-menu ">
+                    <label for="cartMobileCheckbox" class="close-btn">
+                        <i class="fas fa-times"></i>
+                    </label>
+                    <div class="title"><i class="fas fa-shopping-cart"></i>CART</div>
+                    <ul class="cart-list">
+                        <li class="cart-item">
+                            <div class="cart-item-delete-btn noselect" onclick="closeParentBtn(this)"
+                                title="Click to delete item">X</div>
+                            <a href="#" class="cart-item-link">
+                                <div class="cart-item-img"></div>
+                                <div class="cart-item-content">
+                                    <div class="cart-item-content-title percent-tag"> product title here</div>
+                                    <div class="cart-item-content-price">
+                                        <div class="cart-item-amount">1x</div>
+                                        <div class="cart-item-price">$35.00</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="cart-item">
+                            <div class="cart-item-delete-btn noselect" onclick="closeParentBtn(this)"
+                                title="Click to delete item">X</div>
+                            <a href="#" class="cart-item-link">
+                                <div class="cart-item-img"></div>
+                                <div class="cart-item-content">
+                                    <div class="cart-item-content-title percent-tag"> product title here</div>
+                                    <div class="cart-item-content-price">
+                                        <div class="cart-item-amount">1x</div>
+                                        <div class="cart-item-price">$35.00</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="cart-item">
+                            <div class="cart-item-delete-btn noselect" onclick="closeParentBtn(this)"
+                                title="Click to delete item">X</div>
+                            <a href="#" class="cart-item-link">
+                                <div class="cart-item-img"></div>
+                                <div class="cart-item-content">
+                                    <div class="cart-item-content-title percent-tag"> product title here</div>
+                                    <div class="cart-item-content-price">
+                                        <div class="cart-item-amount">1x</div>
+                                        <div class="cart-item-price">$35.00</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="place">
+                        <div class="place-subtotal">
+                            <span>Subtotal</span>
+                            <span>$2589.99</span>
+                        </div>
+                        <div class="place-btn">
+                            <button class="place-btn__view-cart">view cart</button>
+                            <button class="place-btn__checkout">checkout</button>
+                        </div>
+                    </div>
+                </div>
                 <a href="#" class="header-logo"><img src="/img/logo.webp" alt="logo"></a>
-                <ul class="main-navigation">
+                <ul class="navigation">
                     <li><a href="#">HOME</a></li>
                     <li><a href="#">PAGES</a></li>
                     <li><a href="#">BLOG</a></li>
@@ -54,15 +122,45 @@
                     <li><a href="#" class="item-focus">SHOP</a></li>
                     <li><a href="#">FEATURES</a></li>
                     <li><a href="#">ELEMENTS</a></li>
-                </ul>
-                <ul class="sub-navigation">
-                    <li><a href="#" class="language"><img src="/img/flag.png" alt=""></a></li>
-                    <li><a href="#"><i class="fas fa-search"></i></a></li>
-                    <li><a href="#" class="cart">
+                    <li class="sub">
+                        <a href="#" class="language"><img src="/img/flag.png" alt=""></a>
+                        <a href="#"><i class="fas fa-search"></i></a>
+                        <a href="#" class="cart">
                             <i class="fas fa-shopping-cart"></i>
                             <div>2</div>
-                        </a></li>
+                        </a>
+                    </li>
                 </ul>
+                <input type="checkbox" name="menuMobile" id="menuMobile" hidden>
+                <label for="menuMobile" class="primary-menu-mobile-btn hidden"><i class="fas fa-bars"></i></label>
+                <label for="menuMobile" class="primary-menu-mobile-overlay"></label>
+                <div class="primary-menu-mobile">
+                    <div class="nav">
+                        <div class="title"> MENU </div>
+                        <label for="menuMobile" class="close-btn">
+                            <i class="fas fa-times"></i>
+                        </label>
+                        <a href="#" class="item"> HOME </a>
+                        <a href="#" class="item"> PAGES </a>
+                        <a href="#" class="item"> BLOGS </a>
+                        <a href="#" class="item"> PORTFOLIUS </a>
+                        <a href="#" class="item"> SHOP </a>
+                        <a href="#" class="item"> FEATURE </a>
+                        <a href="#" class="item"> ELEMENT </a>
+                    </div>
+                    <div class="contact">
+                        <div class="contact-btn noselect" onclick="showNextSiblingElement(this)"> More <i
+                                class="fas fa-chevron-right"></i>
+                        </div>
+                        <div class="contact-list hidden">
+                            <a href="#"><i class="fas fa-chevron-right"></i> My Account</a>
+                            <a href="#"><i class="fas fa-chevron-right"></i> FAQ</a>
+                            <a href="#"><i class="fas fa-chevron-right"></i> Contact Us</a>
+                            <a href="#"><i class="fas fa-chevron-right"></i> Newsletter Sigup</a>
+                            <a href="#"><i class="fas fa-chevron-right"></i> Shipping Terms</a>
+                        </div>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
