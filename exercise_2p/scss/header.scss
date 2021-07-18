@@ -87,6 +87,7 @@ header {
         background-color: #ffffff;
         @include montserrat2(bold, 1.4rem);
         text-align: left;
+        box-shadow: 0 2px  5px #555;
         .header-navbar {
             padding: 0 15px;
             height: 100px;
@@ -289,7 +290,6 @@ header {
                     }
                 }
                 .nav {
-                    box-sizing: border-box;
                     .item {
                         display: block;
                         height: 54px;
@@ -375,7 +375,7 @@ header {
                 padding: {
                     left: 50px;
                 }
-                li {
+                & > li {
                     display: flex;
                     align-items: center;
                     height: 100px;
@@ -398,8 +398,8 @@ header {
                         }
                         .cart {
                             display: flex;
-
-                            div {
+                            position: relative;
+                            .amount {
                                 width: 32px;
                                 height: 17px;
                                 margin-left: 5px;
@@ -424,6 +424,235 @@ header {
                                     border-left: solid 8px #ffffff;
                                     top: 60%;
                                     left: 0;
+                                }
+                            }
+                            &:after{
+                                content: "";
+                                width: 120%;
+                                height: 20px;
+                                position: absolute;
+                                top: 100%;
+                                right: 0;
+                            }
+                            &:hover > .cart-menu-widget.hover{
+                                display: block;
+                                height: fit-content;
+                            }
+                            .cart-menu-widget {
+                                // styel 1
+                                width: 288px;
+                                display: none;
+                                border: 1px solid $border-color-grey;
+                                position: absolute;
+                                right: 0;
+                                top: calc(100% + 20px);
+                                animation: fade linear 0.5s;
+                                z-index: 4;
+                                &-list {
+                                    padding: 0;
+                                    margin: 0;
+                                    background-color: #ffffff;
+                                    &-item {
+                                        margin: 0;
+                                        border-bottom: 1px solid $border-color-grey;
+                                        position: relative;
+                                        &-delete-btn {
+                                            width: 40px;
+                                            height: 40px;
+                                            font-size: 1.6rem;
+                                            color: #99a9b5;
+                                            line-height: 4rem;
+                                            text-align: center;
+                                            position: absolute;
+                                            right: 0;
+                                            top: 0;
+                                            z-index: 2;
+                                            &:hover {
+                                                background-color: #dddddd;
+                                            }
+                                        }
+                                        &-link {
+                                            background-color: #ffffff;
+                                            display: flex;
+                                            padding: 14px;
+                                            &:hover{
+                                                opacity: 0.7;
+                                            }
+                                            .cart-menu-widget-list-item-img {
+                                                margin-right: 20px;
+                                                width: 80px;
+                                                height: 80px;
+                                                background-color: #888;
+                                            }
+                                            .cart-menu-widget-list-item-content {
+                                                color: #5f727f;
+                                                display: flex;
+                                                flex-direction: column;
+                                                align-items: flex-start;
+                                                justify-content: center;
+                                                & * {
+                                                    margin: 4px 0;
+                                                }
+                                                font: {
+                                                    family: $font-sourceSansPro;
+                                                    weight: 400;
+                                                    size: 1.6rem;
+                                                }
+                                                &-title {
+                                                    text-transform: capitalize;
+                                                    position: relative;
+                                                    &.percent-tag::before {
+                                                        content: '%';
+                                                        display: flex;
+                                                        justify-content: center;
+                                                        align-items: center;
+                                                        color: #ffffff;
+                                                        width: 24px;
+                                                        height: 24px;
+                                                        border-radius: 50%;
+                                                        background-color: #00bcd4;
+                                                        position: absolute;
+                                                        left: -30px;
+                                                        top: -4px;
+                                                    }
+                                                }
+                                                &-price {
+                                                    display: flex;
+                                                    align-items: baseline;
+                                                    .cart-menu-widget-list-item-amount {
+                                                        color: #99a9b5;
+                                                        font-weight: 400;
+                                                        font-size: 1.6rem;
+                                                    }
+                                                    .cart-menu-widget-list-item-price {
+                                                        color: #3c3950;
+                                                        font-weight: 300;
+                                                        font-size: 2rem;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                &-place {
+                                    padding: 34px 10px 10px 10px;
+                                    background-color: #f0f3f2;
+                                    &-subtotal {
+                                        width: 100%;
+                                        display: flex;
+                                        justify-content: space-between;
+                                        font: {
+                                            family: $font-sourceSansPro;
+                                            weight: 400;
+                                        }
+                                        &-text {
+                                            font-size: 1.6rem;
+                                            color: #5f727f;
+                                        }
+                                        &-value {
+                                            font-size: 2.4rem;
+                                        }
+                                    }
+                                    &-btn {
+                                        width: 100%;
+                                        display: flex;
+                                        justify-content: space-between;
+                                        margin-top: 32px;
+                                        button {
+                                            width: 124px;
+                                            height: 30px;
+                                            border-radius: 2px;
+                                            text-transform: uppercase;
+                                            outline: none;
+                                            border: none;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            @include montserrat2(bold, 1.4rem);
+                                            &:hover{
+                                                opacity: 0.7;
+                                            }
+                                        }
+                                        &__view-cart {
+                                            background-color: #00bcd4;
+                                            color: #ffffff;
+                                        }
+                                        &__checkout {
+                                            color: #000000;
+                                            border: 2px solid #000000 !important;
+                                        }
+                                    }
+                                }
+                            }
+                            .cart-menu-widget.cart-menu-widget-style2{
+                                //style 2
+                                .cart-menu-widget-list {
+                                    padding: 24px 0 24px 24px;
+                                    &-item {
+                                        border: none;
+                                        &:not(:last-child){
+                                            margin-bottom: 24px;
+                                        }
+                                        &-delete-btn {
+                                        }
+                                        &-link {
+                                            padding: 0;
+                                            .cart-menu-widget-list-item-img {
+                                                margin-right: 20px;
+                                                width: 60px;
+                                                height: 60px;
+                                            }
+                                        }
+                                    }
+                                }
+                                &-place {
+                                    padding: 34px 10px 10px 10px;
+                                    background-color: #f0f3f2;
+                                    &-subtotal {
+                                        width: 100%;
+                                        display: flex;
+                                        justify-content: space-between;
+                                        font: {
+                                            family: $font-sourceSansPro;
+                                            weight: 400;
+                                        }
+                                        &-text {
+                                            font-size: 1.6rem;
+                                            color: #5f727f;
+                                        }
+                                        &-value {
+                                            font-size: 2.4rem;
+                                        }
+                                    }
+                                    &-btn {
+                                        width: 100%;
+                                        display: flex;
+                                        justify-content: space-between;
+                                        margin-top: 32px;
+                                        button {
+                                            width: 124px;
+                                            height: 30px;
+                                            border-radius: 2px;
+                                            text-transform: uppercase;
+                                            outline: none;
+                                            border: none;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            @include montserrat2(bold, 1.4rem);
+                                            &:hover{
+                                                opacity: 0.7;
+                                            }
+                                        }
+                                        &__view-cart {
+                                            background-color: #00bcd4;
+                                            color: #ffffff;
+                                        }
+                                        &__checkout {
+                                            color: #000000;
+                                            border: 2px solid #000000 !important;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -575,7 +804,7 @@ header {
             left: 0;
             right: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px #555;
+            // box-shadow: 0 2px 10px  #555;
             .header-navbar {
                 //mobile
                 height: 67px;
@@ -669,7 +898,7 @@ header {
             left: 0;
             right: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px #555;
+            // box-shadow: 0 2px 10px #555;
             background-color: #ffffff;
             .header-navbar {
                 display: flex;

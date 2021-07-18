@@ -1291,10 +1291,9 @@ button.scroll-up-btn {
         margin: 40px 0 !important; } }
 
 .cart-menu-widgets {
-  margin-top: 200px;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 200px auto;
   display: flex;
   justify-content: space-around; }
   .cart-menu-widgets .cart-menu-widget {

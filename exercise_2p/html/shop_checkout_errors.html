@@ -28,7 +28,7 @@
         <header>
             <div id="on-top"></div>
             <div class="header-top">
-                <nav class="header-contacts">
+                <nav class="header-contacts grid">
                     <div class="header-contacts-number"><i class="fas fa-headphones"></i>+1916-85-2235</div>
                     <ul class="header-contacts-socials">
                         <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -50,7 +50,7 @@
                 </nav>
             </div>
             <div class="header-bottom sticky">
-                <nav class="header-navbar">
+                <nav class="header-navbar grid">
                     <input type="checkbox" name="cartMobileCheckbox" id="cartMobileCheckbox" class="hidden">
                     <label for="cartMobileCheckbox" class="cart-mobile-btn hidden">
                         <i class="fas fa-shopping-cart"></i>
@@ -129,10 +129,128 @@
                         <li class="sub">
                             <a href="#" class="language"><img src="/img/flag.png" alt=""></a>
                             <a href="#"><i class="fas fa-search"></i></a>
-                            <a href="#" class="cart">
+                            <div href="#" class="cart">
                                 <i class="fas fa-shopping-cart"></i>
-                                <div>2</div>
-                            </a>
+                                <div class="amount">2</div>
+                                <div class="cart-menu-widget cart-menu-widget-style1 hover">
+                                    <ul class="cart-menu-widget-list">
+                                        <li class="cart-menu-widget-list-item">
+                                            <div class="cart-menu-widget-list-item-delete-btn noselect"
+                                                title="Click to delete item" onclick="closeParentBtn(this)">X</div>
+                                            <a href="#" class="cart-menu-widget-list-item-link">
+                                                <div class="cart-menu-widget-list-item-img"></div>
+                                                <div class="cart-menu-widget-list-item-content">
+                                                    <div class="cart-menu-widget-list-item-content-title percent-tag">
+                                                        product title here</div>
+                                                    <div class="cart-menu-widget-list-item-content-price">
+                                                        <div class="cart-menu-widget-list-item-amount">1x</div>
+                                                        <div class="cart-menu-widget-list-item-price">$35.00</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="cart-menu-widget-list-item">
+                                            <div class="cart-menu-widget-list-item-delete-btn noselect"
+                                                title="Click to delete item" onclick="closeParentBtn(this)">X</div>
+                                            <a href="#" class="cart-menu-widget-list-item-link">
+                                                <div class="cart-menu-widget-list-item-img"></div>
+                                                <div class="cart-menu-widget-list-item-content">
+                                                    <div class="cart-menu-widget-list-item-content-title percent-tag">
+                                                        product title here</div>
+                                                    <div class="cart-menu-widget-list-item-content-price">
+                                                        <div class="cart-menu-widget-list-item-amount">1x</div>
+                                                        <div class="cart-menu-widget-list-item-price">$35.00</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="cart-menu-widget-list-item">
+                                            <div class="cart-menu-widget-list-item-delete-btn noselect"
+                                                title="Click to delete item" onclick="closeParentBtn(this)">X</div>
+                                            <a href="#" class="cart-menu-widget-list-item-link">
+                                                <div class="cart-menu-widget-list-item-img"></div>
+                                                <div class="cart-menu-widget-list-item-content">
+                                                    <div class="cart-menu-widget-list-item-content-title percent-tag">
+                                                        product title here</div>
+                                                    <div class="cart-menu-widget-list-item-content-price">
+                                                        <div class="cart-menu-widget-list-item-amount">1x</div>
+                                                        <div class="cart-menu-widget-list-item-price">$35.00</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="cart-menu-widget-place">
+                                        <div class="cart-menu-widget-place-subtotal">
+                                            <span class="cart-menu-widget-place-subtotal-text">Subtotal</span>
+                                            <span class="cart-menu-widget-place-subtotal-value">$2589.99</span>
+                                        </div>
+                                        <div class="cart-menu-widget-place-btn">
+                                            <button class="cart-menu-widget-place-btn__view-cart">view cart</button>
+                                            <button class="cart-menu-widget-place-btn__checkout">checkout</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cart-menu-widget cart-menu-widget-style2">
+                                    <ul class="cart-menu-widget-list">
+                                        <li class="cart-menu-widget-list-item">
+                                            <div class="cart-menu-widget-list-item-delete-btn noselect"
+                                                title="Click to delete item" onclick="closeParentBtn(this)">X</div>
+                                            <a href="#" class="cart-menu-widget-list-item-link">
+                                                <div class="cart-menu-widget-list-item-img"></div>
+                                                <div class="cart-menu-widget-list-item-content">
+                                                    <div class="cart-menu-widget-list-item-content-title percent-tag">
+                                                        product title here</div>
+                                                    <div class="cart-menu-widget-list-item-content-price">
+                                                        <div class="cart-menu-widget-list-item-amount">1x</div>
+                                                        <div class="cart-menu-widget-list-item-price">$35.00</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="cart-menu-widget-list-item">
+                                            <div class="cart-menu-widget-list-item-delete-btn noselect"
+                                                title="Click to delete item" onclick="closeParentBtn(this)">X</div>
+                                            <a href="#" class="cart-menu-widget-list-item-link">
+                                                <div class="cart-menu-widget-list-item-img"></div>
+                                                <div class="cart-menu-widget-list-item-content">
+                                                    <div class="cart-menu-widget-list-item-content-title percent-tag">
+                                                        product title here</div>
+                                                    <div class="cart-menu-widget-list-item-content-price">
+                                                        <div class="cart-menu-widget-list-item-amount">1x</div>
+                                                        <div class="cart-menu-widget-list-item-price">$35.00</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="cart-menu-widget-list-item">
+                                            <div class="cart-menu-widget-list-item-delete-btn noselect"
+                                                title="Click to delete item" onclick="closeParentBtn(this)">X</div>
+                                            <a href="#" class="cart-menu-widget-list-item-link">
+                                                <div class="cart-menu-widget-list-item-img"></div>
+                                                <div class="cart-menu-widget-list-item-content">
+                                                    <div class="cart-menu-widget-list-item-content-title percent-tag">
+                                                        product title here</div>
+                                                    <div class="cart-menu-widget-list-item-content-price">
+                                                        <div class="cart-menu-widget-list-item-amount">1x</div>
+                                                        <div class="cart-menu-widget-list-item-price">$35.00</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="cart-menu-widget-place">
+                                        <div class="cart-menu-widget-place-subtotal">
+                                            <span class="cart-menu-widget-place-subtotal-text">Subtotal</span>
+                                            <span class="cart-menu-widget-place-subtotal-value">$2589.99</span>
+                                        </div>
+                                        <div class="cart-menu-widget-place-btn">
+                                            <button class="cart-menu-widget-place-btn__view-cart">view cart</button>
+                                            <button class="cart-menu-widget-place-btn__checkout">checkout</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                     <input type="checkbox" name="menuMobile" id="menuMobile" hidden>
@@ -196,8 +314,8 @@
                     <div class="icon">
                         <i class="fas fa-exclamation-triangle"></i>
                     </div>
-                    <span class="error-name"> error: </span> Invalid username.&#160 <a href="#" class="error-suggest"> Lost
-                        your password? </a>
+                    <span class="error-name"> error: </span> Invalid username.&#160 <a href="#" class="error-suggest">
+                        Lost your password? </a>
                     <div class="close-btn" onclick="closeParentBtn(this)">
                         <i class="ti-close"></i>
                     </div>
@@ -206,8 +324,8 @@
                     <div class="icon">
                         <i class="fas fa-exclamation-circle"></i>
                     </div>
-                    <span class="error-name"> phone: </span> is a required field.
-                    <div class="close-btn" onclick="closeParentBtn(this)">
+                    <span class="error-name"> phone: </span> is a required field. <div class="close-btn"
+                        onclick="closeParentBtn(this)">
                         <i class="ti-close"></i>
                     </div>
                 </div>
@@ -220,17 +338,14 @@
                 <div class="form-login">
                     <div class="exist-customer">
                         <div class="title"><i class="fas fa-key"></i>existing customer</div>
-                        <div class="login-input">
-                            Username or email <span>*</span>
-                            <input type="email" name="username" id="usernameLogin">
-                            Password<span>*</span>
+                        <div class="login-input"> Username or email <span>*</span>
+                            <input type="email" name="username" id="usernameLogin"> Password<span>*</span>
                             <input type="password" name="password" id="passwordLogin">
                         </div>
                         <div class="login-btns">
                             <div class="login-enter">LOGIN</div>
-                            <input type="checkbox" name="rememberMe" id="rememberMe">
-                            Remember me
-                            <div class="lostPassword">
+                            <input type="checkbox" name="rememberMe" id="rememberMe"> Remember me <div
+                                class="lostPassword">
                                 <a href="#" class="lostPassword-link">Lost your password?</a>
                             </div>
                         </div>
@@ -238,7 +353,7 @@
                     <div class="new-customer noselect">
                         <div class="title"><i class="fas fa-id-badge"></i>new customer</div>
                         <div class="login-guest btn">checkout as guest</div>
-                        <div class="create-account btn">create an  account</div>
+                        <div class="create-account btn">create an account</div>
                     </div>
                 </div>
             </div>
@@ -441,8 +556,9 @@
             </div>
         </footer>
         <!-- end footer -->
-        <button class="scroll-up-btn" onclick="document.getElementById('on-top').scrollIntoView({behavior: 'smooth'})"
-           ><i class="fas fa-chevron-up"></i></button>
+        <button class="scroll-up-btn"
+            onclick="document.getElementById('on-top').scrollIntoView({behavior: 'smooth'})"><i
+                class="fas fa-chevron-up"></i></button>
     </div>
     <script src="/js/common.js"></script>
 </body>
